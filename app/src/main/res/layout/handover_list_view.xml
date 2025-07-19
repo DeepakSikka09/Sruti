@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10DP"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_7DP"
+    app:cardElevation="@dimen/_10DP">
+
+    <LinearLayout
+        android:id="@+id/shipment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5DP"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5DP">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/awb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5DP"
+                android:orientation="horizontal">
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:text="@string/awb_no"
+                    android:textColor="@color/colorText"
+                    android:textSize="13sp" />
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                    android:id="@+id/tv_manifest_awb_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:textColor="@color/colorText"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

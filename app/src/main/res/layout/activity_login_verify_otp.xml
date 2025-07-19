@@ -1,0 +1,313 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.login.verifyOtpLoginScreen.LoginVerifyOtpViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activityMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:orientation="vertical">
+
+<!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:orientation="vertical">-->
+
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:elevation="10px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
+                android:orientation="horizontal"
+                android:weightSum=".1">
+
+                <ImageView
+                    android:id="@+id/back"
+                    style="@style/TextStyle.Title.Sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:onClick="@{() -> viewModel.onBackClick()}"
+                    android:padding="@dimen/_10DP"
+                    android:tint="@color/colorPrimaryDark"
+                    app:srcCompat="@drawable/back" />
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    style="@style/TextStyle.Title.Sub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:padding="@dimen/_15DP"
+                    android:text="@string/verify_otp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/_10DP"
+                    android:layout_marginRight="@dimen/_10DP"
+                    android:gravity="center|end"
+                    android:text="@string/v2_0_0"
+                    android:textColor="@color/colorAccent1"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorView" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/enter_otp_layout_child2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5DP"
+                    android:background="@color/colorBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_30DP"
+                        android:tint="@color/colorAccent1"
+                        android:backgroundTint="@color/colorAccent1"
+                        android:background="@drawable/mobile" />
+
+
+                  <!--  <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/colorBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">-->
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5DP"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text="Verify your mobile"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/enter_otp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_20DP"
+                            android:gravity="center"
+                            android:hint="we have sent"
+                            android:text="@{viewModel.getmobile()}"
+                            android:textColor="@color/colorButton"
+                            android:textSize="13sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:background="@color/colorBackground">
+
+                            <TextView
+                                android:id="@+id/timer_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="00:30"
+                                android:textColor="@color/colorAccent1"
+                                android:textSize="13sp" />
+                        </RelativeLayout>
+
+                        <!--Resend/verify buttons-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/_20DP"
+                            android:background="@color/colorBackground"
+                            android:gravity="bottom"
+                            android:orientation="horizontal"
+                            android:weightSum=".10">
+
+
+                            <Button
+                                android:id="@+id/resend_tv"
+                                style="@style/TextStyle.Title.Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/generic_button"
+                                android:gravity="center"
+                                android:onClick="@{() -> viewModel.onResendOtpClick()}"
+                                android:padding="@dimen/_10DP"
+                                android:text="@string/resend"
+                                android:textColor="@color/colorBackground"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    <!--</LinearLayout>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/enter_otp_layout_child3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5DP"
+                    android:background="@color/colorBackground"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10DP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:backgroundTint="@color/colorAccent1"
+                        android:background="@drawable/mobile" />
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/colorBackground"
+                        android:gravity="center"
+                        android:text="Verify your mobile"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                  <!--  <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@color/colorBackground"
+                        android:gravity="center"
+                        android:orientation="vertical">-->
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/enter_otp_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5DP"
+                            android:background="@color/colorBackground"
+                            android:gravity="center"
+                            android:text="@{viewModel.getmobile()}"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="13sp" />
+
+                       <!-- <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_30DP"
+
+                            android:background="@color/colorBackground">
+-->
+                            <EditText
+                                android:id="@+id/otp_edt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="@dimen/_30DP"
+                                android:background="@drawable/border"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="@dimen/_20DP"
+                                android:elevation="10px"
+                                android:hint="Enter OTP"
+                                />
+                        <!--</RelativeLayout>-->
+
+                        <!--Resend/verify buttons-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="bottom"
+                            android:layout_weight=".01"
+                            android:layout_margin="@dimen/_10DP"
+                            android:background="@color/colorBackground"
+                            android:gravity="bottom"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10DP"
+                            android:weightSum=".10">
+
+                            <Button
+                                android:id="@+id/resend_otp_tv"
+                                style="@style/TextStyle.Title.Sub"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".05"
+                                android:background="@drawable/generic_button"
+                                android:gravity="center"
+                                android:onClick="@{() -> viewModel.onResendOtpClick()}"
+
+                                android:text="@string/resend"
+                                android:textColor="@color/colorBackground"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/verify_tv"
+                                style="@style/TextStyle.Title.Sub"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_weight=".05"
+                                android:background="@drawable/generic_button"
+                                android:gravity="center"
+                                android:onClick="@{() -> viewModel.onOtpVerify()}"
+                                android:text="@string/verify"
+                                android:textColor="@color/colorBackground"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--</LinearLayout>-->
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+<!--
+    </LinearLayout>-->
+</layout>

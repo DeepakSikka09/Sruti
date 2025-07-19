@@ -1,0 +1,113 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.todolist.todo_item_viewmodel.QrcReaderViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activityMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/header"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:elevation="10px"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="start"
+                android:padding="@dimen/_10DP"
+                android:tint="@color/colorPrimaryDark"
+                app:srcCompat="@drawable/back" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:gravity="start"
+                android:padding="@dimen/_15DP"
+                android:text="@string/qr_code"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="@dimen/_10DP"
+                android:layout_marginRight="@dimen/_10DP"
+                android:gravity="center"
+                android:text="@string/v2_0_0"
+                android:textColor="@color/colorAccent1"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:id="@+id/btnDrop"
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10DP"
+                android:layout_marginLeft="@dimen/_10DP"
+                android:background="@null"
+                android:gravity="center"
+                android:padding="@dimen/_5DP"
+                app:srcCompat="@drawable/ic_viewby"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/btnCommit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="start"
+                android:padding="@dimen/_10DP"
+                android:tint="@color/colorPrimaryDark"
+                app:srcCompat="@drawable/ic_next" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorView" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.journeyapps.barcodescanner.DecoratedBarcodeView
+                android:id="@+id/zxing_barcode_scanner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:zxing_scanner_layout="@layout/custom_scanner" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

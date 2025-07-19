@@ -1,0 +1,36 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+    </data>
+
+
+            <LinearLayout
+                android:elevation="10px"
+                android:id="@+id/layout_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/pin_keyboard_background"
+                android:layout_margin="@dimen/_5DP"
+                android:orientation="vertical">
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+
+                    android:layout_width="@dimen/_80DP"
+                    android:layout_height="@dimen/_80DP"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Jan"
+                    android:id="@+id/month_name"
+                    android:padding="@dimen/_10DP"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+
+</layout>

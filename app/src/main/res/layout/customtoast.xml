@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_toast_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5DP"
+    app:cardBackgroundColor="@color/colorAccent1"
+    app:cardCornerRadius="@dimen/_30DP"
+    app:cardElevation="@dimen/_10DP">
+
+    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+        android:id="@+id/custom_toast_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_15DP"
+        android:text="Sample"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+</androidx.cardview.widget.CardView>

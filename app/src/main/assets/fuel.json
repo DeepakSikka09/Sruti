@@ -1,0 +1,63 @@
+{
+  "status": true,
+  "response": {
+    "code": 0,
+    "description": "Last 15 day's reimbursement report created",
+    "reports": [
+      {
+        "id": 224,
+        "vehicle_type": 2,
+        "trip_name": "Dwarika",
+        "trip_date": "Mar 11 05:30",
+        "trip_time": 21970000,
+        "trip_distance": 33,
+        "shipment_details": {
+          "success": 0,
+          "unattempted": 2,
+          "undelivered": 0
+        },
+        "reimbursement_status": {
+          "claimed": 0,
+          "approved": 0,
+          "status": 2
+        }
+      },
+      {
+        "id": 225,
+        "vehicle_type": 2,
+        "trip_name": "Dwarika",
+        "trip_date": "Mar 11 05:30",
+        "trip_time": 42130000,
+        "trip_distance": 33,
+        "shipment_details": {
+          "success": 0,
+          "unattempted": 2,
+          "undelivered": 0
+        },
+        "reimbursement_status": {
+          "claimed": 0,
+          "approved": 0,
+          "status": 2
+        }
+      },
+      {
+        "id": 226,
+        "vehicle_type": 2,
+        "trip_name": "Dwarika",
+        "trip_date": "Mar 11 05:30",
+        "trip_time": 42130000,
+        "trip_distance": 33,
+        "shipment_details": {
+          "success": 0,
+          "unattempted": 2,
+          "undelivered": 0
+        },
+        "reimbursement_status": {
+          "claimed": 0,
+          "approved": 0,
+          "status": 2
+        }
+      }
+    ]
+  }
+}

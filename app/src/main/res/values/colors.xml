@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#283593</color>
+    <color name="colorPrimaryDark">#1f2976</color>
+    <!--   <color name="colorPrimary">#00695C</color>
+    <color name="colorPrimaryDark">#004D40</color>-->
+    <!--<color name="colorPrimary">#757575</color>-->
+    <!--<color name="colorPrimaryDark">#616161</color>-->
+    <color name="colorAccent">#283593</color>
+
+    <color name="colorAccent1">#e28431</color>
+    <color name="colorAccent2">#f2e8df</color>
+    <color name="colorAccent3">#5d9ed6</color>
+    <color name="colorAccent4">#60a1d7</color>
+
+
+    <!--<color name="colorView">#E0E0E0</color>-->
+    <color name="colorIconTray">#f9f9f9</color>
+    <color name="colorbg">#efeff7</color>
+    <color name="colorView">#f2e8df</color>
+    <color name="colorView2">#f5efe8</color>
+    <color name="colorSelf">#36FF9800</color>
+    <!--<color name="colorStatusbar">#616161</color>-->
+    <color name="colorStatusbar">#1f2976</color>
+    <color name="colorBackground">#FBFBFB</color>
+    <color name="colorText">#454141</color>
+    <color name="colorHeadingText">#C02222</color>
+    <color name="colorlogo">#58a5af</color>
+    <!--<color name="colorSearchbar">#ECEFF1</color>-->
+    <color name="colorSearchbar">#f1f1f4</color>
+    <color name="colorButton">#1f2976</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+
+    <color name="offwhite_2">#F8F7F7</color>
+
+    <color name="dashboarddark">#9FA8DA</color>
+    <color name="dashboardtool">#e4e5ea</color>
+
+    <!--<color name="dashboardtool">#e5d9f7</color>-->
+    <color name="dashboardbg">#E8EAF6</color>
+    <color name="dashboardview">#7986CB</color>
+    <!--<color name="colorAccent">#5C6BC0</color>-->
+    <!--<color name="blue">#c1d4e7</color>-->
+    <color name="blue">#E8EAF6</color>
+    <color name="bluelite">#bfc2d4</color><!--<color name="bluelite">#dfe6ed</color>-->
+    <color name="drsbg">#E8EAF6</color>
+
+    <color name="light_steel_blue">#b0c4de</color>
+    <color name="white_gray">#10000000</color>
+
+
+    <color name="blue_ecom">#333E86</color>
+    <color name="status_navigation_bar">#151a38</color>
+    <color name="red_ecom">#C02222</color>
+    <color name="rtstext">#01579B</color>
+    <color name="red_ecom_light">#28c23232</color>
+    <color name="gray_ecom">#D4D3D1</color>
+
+    <color name="my_gray_ecom">#EEEEEE</color>
+    <color name="dark_gray">#333333</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="toast_color">#96000000</color>
+    <!-- <color name="shadow">#e0e8ec</color>-->
+    <color name="shadow">#E8EAF6</color>
+    <color name="tsp">#FFFFFFFF</color>
+
+    <color name="light_gray">#ECEFF1</color>
+    <color name="gray">#616161</color>
+    <color name="semi_gray">#e0e8ec</color>
+    <color name="map_trip">#283593</color>
+    <color name="map_first_trip">#558B2F</color>
+
+    <color name="bg_color">#f7f7f7</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="translucent_white">#88ffffff</color>
+
+    <color name="fb">#3b5998</color>
+    <color name="google">#d34836</color>
+
+    <!--Design colors-->
+    <color name="red_dark">#df8080</color>
+    <color name="red_dark1">#efdddd</color>
+    <color name="red_dark2">#ea3737</color>
+    <color name="red_dark_light">#de5454</color>
+    <!--<color name="red">#d42c2f</color>-->
+
+    <!--<color name="red">#715ce2</color>-->
+
+    <color name="cyan_light">#d3e4e6</color>
+    <color name="cyan">#4cadb6</color>
+    <color name="cyan_dark">#caecf1</color>
+    <color name="navy_blue">#214258</color>
+    <color name="navy_blue_dark">#1C3A4E</color>
+    <color name="_green">#c9e6c6</color>
+    <color name="__green">#ecf6e8</color>
+    <color name="_greenlight">#3abc3c</color>
+    <color name="green">#558B2F</color>
+    <color name="light_blue">#77aec1</color>
+    <color name="blue_black_dark">#13171d</color>
+    <color name="blue_black_light">#516179</color>
+    <!--<color name="blue_grey_light">#cfe6e9</color>-->
+    <color name="blue_grey_light">#283593</color>
+    <color name="orange">#FFAB40</color>
+    <color name="orangelight">#FFF3E0</color>
+    <color name="darkyellow">#b7a01c</color>
+    <color name="yellow">#e1cd35</color>
+    <color name="purple">#aa35e9</color>
+    <color name="light_yellow">#dfc13a</color>
+    <color name="light_yellow_center">#d2c47f</color>
+    <color name="assigned">#66fcd616</color>
+    <color name="undelivered">#87c23232</color>
+    <color name="delivered">#943fa14f</color>
+    <!--  <color name="fwd">#8ea4cc</color>-->
+    <color name="fwd">#283593</color>
+    <!--  <color name="eds">#757575</color>
+      <color name="edstool">#9E9E9E</color>
+      <color name="edslight">#FAFAFA</color>-->
+    <color name="eds">#795548</color>
+    <color name="edstool">#6D4C41</color>
+    <color name="edslight">#EFEBE9</color>
+
+
+    <!--<color name="rts">#B71C1C</color>-->
+    <!--<color name="rtstool">#C62828</color>-->
+    <!--<color name="rtslight">#faf3f4</color>-->
+    <color name="pickup">#e67206</color>
+    <color name="pickuptool">#da7414</color>
+    <color name="pickuplight">#fff7eb</color>
+
+
+    <color name="reki">#34bfcc</color>
+    <!--<color name="rekitool">#14aba6</color>-->
+
+    <!--<color name="rekitool">#15b4c2</color>-->
+    <color name="rekilight">#c8e2e4</color>
+
+
+    <color name="rp">#7CB342</color>
+    <!--<color name="rptool">#b3148b</color>-->
+
+    <!--pickup-->
+    <color name="red">#e28431</color>
+    <!--recce-->
+    <color name="rekitool">#618ea4</color>
+    <!--recce+pickup-->
+    <color name="rptool">#283593</color>
+
+
+    <!--<color name="rptool">#466f93</color>-->
+    <color name="rplight">#F1F8E9</color>
+
+
+    <color name="drsiconbg">#E8EAF6</color>
+
+    <color name="undel1">#FFFDE7</color>
+    <color name="undel2">#FFF9C4</color>
+    <color name="undel3">#FFF59D</color>
+    <color name="undel4">#FFF176</color>
+
+    <color name="del1">#E8EAF6</color>
+    <color name="del2">#C5CAE9</color>
+    <color name="del3">#9FA8DA</color>
+    <color name="del4">#7986CB</color>
+    <color name="green_text">#2eb82e</color>
+    <color name="text_color_dark_grey">#707070</color>
+    <color name="text_color_grey">#8E8E8E</color>
+    <color name="text_color_light_grey">#A4AAB2</color>
+    <color name="background_color_grey">#C8C8C8</color>
+    <color name="maroon_color">#AF7A76</color>
+    <color name="container_color">#D9E6FC</color>
+    <color name="shipment_scanned_successfully">#f8fdff</color>
+    <color name="success_font_color">#32b275</color>
+    <color name="shipment_scanned_already">#ffa022</color>
+    <color name="shipment_rto_locked">#ee3148</color>
+
+</resources>

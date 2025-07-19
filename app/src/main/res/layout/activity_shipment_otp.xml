@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.shipment.ShipmentOtpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboard.shipment.ShipmentOtpActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_new" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constrnt_container_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_40DP"
+                    android:layout_marginTop="@dimen/_40DP"
+                    android:layout_marginRight="@dimen/_40DP"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constrnt_picked"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rectangle_button_blue_5dp"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/constrnt_unpicked"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_picked"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_16DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_10DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/picked"
+                            android:textColor="@color/black"
+                            app:layout_constrainedHeight="true"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_total_picked"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_total_picked"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_16DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="2"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_picked" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constrnt_unpicked"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20DP"
+                        android:background="@drawable/rectangle_button_blue_5dp"
+                        app:layout_constraintEnd_toStartOf="@+id/constrnt_pending"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toEndOf="@+id/constrnt_picked"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_unpicked"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_16DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_10DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/unpicked"
+                            android:textColor="@color/black"
+                            app:layout_constrainedHeight="true"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_total_unpicked"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_total_unpicked"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_16DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="2"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_unpicked" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constrnt_pending"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20DP"
+                        android:background="@drawable/rectangle_button_blue_5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toEndOf="@+id/constrnt_unpicked"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_pending"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_16DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_10DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/pending"
+                            android:textColor="@color/black"
+                            app:layout_constrainedHeight="true"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_total_committed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_total_committed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_16DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="2"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_pending" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_container_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_40DP"
+                    android:layout_marginTop="@dimen/_40DP"
+                    android:layout_marginRight="@dimen/_40DP"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constrnt_container_one">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constrnt_manifest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rectangle_button_blue_5dp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_manifest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_16DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_10DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/total_manifest"
+                            android:textColor="@color/black"
+                            app:layout_constrainedHeight="true"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_total_manifest"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_total_manifest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_16DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="2"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_manifest" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constrnt_advance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20DP"
+                        android:background="@drawable/rectangle_button_blue_5dp"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/guideline"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_advance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_16DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_10DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@string/advance"
+                            android:textColor="@color/black"
+                            app:layout_constrainedHeight="true"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_total_advance"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_total_advance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_20DP"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_20DP"
+                            android:layout_marginBottom="@dimen/_16DP"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="2"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_advance" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10DP"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <!--CHILD ONE-->
+                    <LinearLayout
+                        android:id="@+id/layout_child1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_15DP"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15DP"
+                        android:paddingBottom="@dimen/_1DP">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/consignee_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/total_manifest"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_manifest"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:text="1"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/total_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_shipment"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/picked_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_picked"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/unpicked_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_unpicked"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/remaining_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_remaining"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/is_advance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/advance_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_advance_shipment"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/otp_layout"
+                    layout="@layout/otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_40DP"
+                    android:layout_marginTop="@dimen/_80DP"
+                    android:layout_marginEnd="@dimen/_40DP"
+                    app:layout_constraintTop_toBottomOf="@+id/linear_menu" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_alternate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/bt_verify"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_35DP"
+                    android:text="@string/enter_alternate_number"
+                    android:textColor="@color/blue_ecom"
+                    android:gravity="center"
+
+                    android:padding="@dimen/_20DP"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_skip_otp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_skip_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:padding="@dimen/_20DP"
+                    android:text="@string/skip_otp"
+                    android:textColor="@color/blue_ecom"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/bt_verify"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bt_verify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_curved_background"
+                    android:enabled="false"
+                    android:text="@string/proceed"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

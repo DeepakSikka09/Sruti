@@ -1,0 +1,236 @@
+{
+  "status": true,
+  "code": 200,
+  "response": {
+    "start_day_of_month": "thursday",
+    "avg_working_hours": "6:26",
+    "attendance_response_list": [
+      {
+        "date": "26",
+        "formatted_date": "26-09-2019",
+        "in_time": "09:49 AM",
+        "out_time": "06:23 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:34"
+      },
+      {
+        "date": "27",
+        "formatted_date": "27-09-2019",
+        "in_time": "11:34 AM",
+        "out_time": "08:13 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:39"
+      },
+      {
+        "date": "28",
+        "formatted_date": "28-09-2019",
+        "in_time": "09:56 AM",
+        "out_time": "06:20 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:24"
+      },
+      {
+        "date": "29",
+        "formatted_date": "29-09-2019",
+        "attendance_status": "WO",
+        "daily_working_hours": "0:00"
+      },
+      {
+        "date": "30",
+        "formatted_date": "30-09-2019",
+        "in_time": "09:50 AM",
+        "out_time": "06:23 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:33"
+      },
+      {
+        "date": "1",
+        "formatted_date": "01-10-2019",
+        "in_time": "10:57 AM",
+        "out_time": "07:10 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:13"
+      },
+      {
+        "date": "2",
+        "formatted_date": "02-10-2019",
+        "attendance_status": "HO",
+        "daily_working_hours": "0:00"
+      },
+      {
+        "date": "3",
+        "formatted_date": "03-10-2019",
+        "in_time": "09:35 AM",
+        "out_time": "06:02 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:27"
+      },
+      {
+        "date": "4",
+        "formatted_date": "04-10-2019",
+        "in_time": "10:48 AM",
+        "out_time": "07:05 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:17"
+      },
+      {
+        "date": "5",
+        "formatted_date": "05-10-2019",
+        "in_time": "09:06 AM",
+        "out_time": "05:53 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:47"
+      },
+      {
+        "date": "6",
+        "formatted_date": "06-10-2019",
+        "attendance_status": "WO",
+        "daily_working_hours": "0:00"
+      },
+      {
+        "date": "7",
+        "formatted_date": "07-10-2019",
+        "in_time": "10:41 AM",
+        "out_time": "07:08 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:27"
+      },
+      {
+        "date": "8",
+        "formatted_date": "08-10-2019",
+        "attendance_status": "HO",
+        "daily_working_hours": "0:00"
+      },
+      {
+        "date": "9",
+        "formatted_date": "09-10-2019",
+        "in_time": "11:24 AM",
+        "out_time": "08:05 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:41"
+      },
+      {
+        "date": "10",
+        "formatted_date": "10-10-2019",
+        "in_time": "10:10 AM",
+        "out_time": "06:30 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:20"
+      },
+      {
+        "date": "11",
+        "formatted_date": "11-10-2019",
+        "in_time": "10:40 AM",
+        "out_time": "06:57 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:17"
+      },
+      {
+        "date": "12",
+        "formatted_date": "12-10-2019",
+        "in_time": "09:06 AM",
+        "out_time": "05:43 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:37"
+      },
+      {
+        "date": "13",
+        "formatted_date": "13-10-2019",
+        "attendance_status": "WO",
+        "daily_working_hours": "0:00"
+      },
+      {
+        "date": "14",
+        "formatted_date": "14-10-2019",
+        "in_time": "10:49 AM",
+        "out_time": "07:03 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:14"
+      },
+      {
+        "date": "15",
+        "formatted_date": "15-10-2019",
+        "in_time": "10:16 AM",
+        "out_time": "06:49 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:33"
+      },
+      {
+        "date": "16",
+        "formatted_date": "16-10-2019",
+        "in_time": "10:26 AM",
+        "out_time": "06:39 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:13"
+      },
+      {
+        "date": "17",
+        "formatted_date": "17-10-2019",
+        "in_time": "11:02 AM",
+        "out_time": "05:22 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "6:20"
+      },
+      {
+        "date": "18",
+        "formatted_date": "18-10-2019",
+        "in_time": "09:20 AM",
+        "out_time": "05:47 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:27"
+      },
+      {
+        "date": "19",
+        "formatted_date": "19-10-2019",
+        "in_time": "10:00 AM",
+        "out_time": "07:02 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "9:02"
+      },
+      {
+        "date": "20",
+        "formatted_date": "20-10-2019",
+        "attendance_status": "WO",
+        "daily_working_hours": "0:00"
+      },
+      {
+        "date": "21",
+        "formatted_date": "21-10-2019",
+        "in_time": "10:10 AM",
+        "out_time": "06:35 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:25"
+      },
+      {
+        "date": "22",
+        "formatted_date": "22-10-2019",
+        "in_time": "09:30 AM",
+        "out_time": "06:57 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "9:27"
+      },
+      {
+        "date": "23",
+        "formatted_date": "23-10-2019",
+        "attendance_status": "AB",
+        "daily_working_hours": "0:00"
+      },
+      {
+        "date": "24",
+        "formatted_date": "24-10-2019",
+        "in_time": "09:43 AM",
+        "out_time": "05:55 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:12"
+      },
+      {
+        "date": "25",
+        "formatted_date": "25-10-2019",
+        "in_time": "09:11 AM",
+        "out_time": "05:16 PM",
+        "attendance_status": "PR",
+        "daily_working_hours": "8:05"
+      }
+    ]
+  }
+}

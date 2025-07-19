@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.handover.HandOverScanActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.handover.HandOverListViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:elevation="10px">
+
+            <ImageView
+                android:id="@+id/back_event"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="start"
+                android:padding="@dimen/_10DP"
+                android:tint="@color/colorPrimaryDark"
+                app:srcCompat="@drawable/back" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/_15DP"
+                android:text="@string/handover_list"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_10DP"
+                android:layout_marginRight="@dimen/_10DP"
+                android:gravity="center|end"
+                android:text="@string/v2_0_0"
+                android:textColor="@color/colorAccent1"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_gravity="center"
+            android:background="@color/colorView"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:orientation="horizontal">
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginBottom="@dimen/_2DP"
+                android:layout_weight=".09"
+                android:gravity="start|center"
+                android:maxLines="2"
+                android:padding="@dimen/_15DP"
+                android:scrollbars="vertical"
+                android:text="@string/vehicle_list"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner_vehicle_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".01"
+                android:backgroundTint="@color/red_ecom"
+                android:entries="@array/vehicle"
+                android:gravity="end|center"
+                android:onItemSelected="@{(parent,view,pos,id)->viewModel.onVehicleType(parent,view,pos,id)}"
+                android:padding="@dimen/_10DP" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/middle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top"
+            android:layout_marginBottom="@dimen/_130DP"
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/handover_recycler_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10DP"
+                android:visibility="gone" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                android:id="@+id/txt_message"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/please_select_vehicle_type"
+                android:textColor="@color/colorAccent1"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10DP"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10DP">
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/generic_button"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

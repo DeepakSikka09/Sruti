@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.globalscan.GlobalScanScreenActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.globalscan.GlobalScanScreenViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--<LinearLayout
+            android:id="@+id/linear_top"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">-->
+
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/zxing_barcode_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_400DP"
+            app:zxing_scanner_layout="@layout/custom_scanner_view" />
+        <ImageButton
+            android:id="@+id/flashlight_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flashoff"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_15DP"
+            android:layout_marginTop="@dimen/_16DP"
+
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+
+
+      <!--  </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_below="@+id/zxing_barcode_scanner"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/next_tv"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="@dimen/_2DP"
+                    android:layout_weight=".09"
+                    android:gravity="start|center"
+                    android:maxLines="2"
+                    android:padding="@dimen/_10DP"
+                    android:scrollbars="vertical"
+                    android:text="Shipment List"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner_vehicle_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".01"
+                    android:backgroundTint="@color/red_ecom"
+                    android:gravity="end|center"
+                    android:padding="@dimen/_10DP" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/globalAwbRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/next_tv"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_20DP"
+            android:background="@drawable/generic_button"
+            android:onClick="@{() -> viewModel.onNext()}"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <Button
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_60DP"
+                android:layout_weight="1.6"
+                android:background="@null"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.onNext()}"
+                android:text="@string/next"
+                android:elevation="10px"
+                android:textColor="@color/colorBackground"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tv_awb_count"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_10DP"
+                android:layout_marginTop="@dimen/_10DP"
+                android:layout_weight="0.3"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="1000"
+                android:textColor="@color/colorBackground"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

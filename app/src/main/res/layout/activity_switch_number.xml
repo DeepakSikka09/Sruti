@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="in.ecomexpress.sruti.ui.dashboard.switchnumber.SwitchNumberDialog">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.switchnumber.SwitchNumberViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/popup_element"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="10px"
+            app:cardBackgroundColor="@color/colorBackground"
+            app:cardCornerRadius="@dimen/_7DP"
+            app:cardElevation="@dimen/_25DP">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5DP"
+                android:background="@color/colorBackground"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:elevation="10px"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorBackground"
+                    android:gravity="center_vertical">
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:padding="@dimen/_10DP"
+                        android:text="@string/switch_callbridge_number"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/cross"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="end|right"
+                        android:layout_weight="0.02"
+                        android:onClick="@{() -> viewModel.onCancelClick()}"
+                        android:padding="@dimen/_10DP"
+                        android:tint="@color/colorPrimaryDark"
+                        app:srcCompat="@drawable/ic_cross" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorView" />
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:id="@+id/current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_10DP"
+                    android:text="current selected number"
+                    android:textColor="@color/colorAccent1"
+                    android:textSize="13sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fuel_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+     />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10DP"
+                    android:onClick="@{() -> viewModel.onSubmitNumber()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10DP">
+
+                    <Button
+                        android:elevation="10px"
+                        android:id="@+id/tv_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/generic_button"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.onSubmitNumber()}"
+                        android:text="@string/submit_"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

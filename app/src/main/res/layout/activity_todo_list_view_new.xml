@@ -1,0 +1,767 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="in.ecomexpress.sruti.ui.dashboard.todolist.todoactivitymodel.ToDoListActivity">
+
+    <data>
+
+        <variable
+            name="activitybinding"
+            type="in.ecomexpress.sruti.ui.dashboard.todolist.todoactivitymodel.ToDoListActivity" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.todolist.todo_item_viewmodel.ToDoListViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/todo_header"
+                    layout="@layout/todo_header"
+                    android:elevation="10px"
+                    app:activityTochild="@{activitybinding}"
+                    app:dataToChild="@{viewModel}" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorView"
+                    android:gravity="center"
+                    android:visibility="gone" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10DP"
+                    android:visibility="visible"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_8DP"
+                    app:cardElevation="@dimen/_10DP">
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/searchview"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:theme="@style/SearchViewStyle"
+                        android:tint="@color/colorPrimaryDark" />
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:id="@+id/rl_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20DP"
+
+                    android:layout_marginLeft="@dimen/_20DP">
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10DP"
+                        android:layout_marginLeft="@dimen/_10DP"
+
+                        android:layout_centerVertical="true"
+                        android:text="@string/status"
+                        android:textColor="@color/text_color_grey"
+                        android:textSize="12sp" />
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:id="@+id/totalcount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_30DP"
+                        android:layout_toRightOf="@+id/tv_status"
+                        android:gravity="end"
+                        android:text="0 out of 0"
+                        android:textColor="@color/colorText"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/_30DP"
+                        android:background="@color/black"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/search" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10DP"
+                    android:onClick="@{() -> viewModel.onIndicatorClick()}"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum=".10">
+
+                    <in.ecomexpress.sruti.utils.common_files.progress_bar.CustomProgressBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_weight=".095"
+                        android:background="@drawable/custom_progressbar_horizontal"
+                        android:elevation="10px"
+                        android:onClick="@{() -> viewModel.onIndicatorClick()}"
+                        android:progress="0"
+                        android:progressDrawable="@android:color/transparent" />
+
+                    <ImageView
+                        android:id="@+id/arrow"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".005"
+                        android:onClick="@{() -> viewModel.onIndicatorClick()}"
+                        android:src="@{viewModel.indicator ? @drawable/ic_arrowdown : @drawable/ic_arrowup}"
+                        android:tint="@color/colorPrimaryDark"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/colorBackground"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:weightSum=".09">
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10DP"
+                        android:layout_weight=".03"
+                        android:drawableLeft="@drawable/rekki_shape"
+                        android:gravity="start"
+                        android:text="@string/recce"
+                        android:textColor="@color/colorText"
+                        android:textSize="10sp" />
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10DP"
+                        android:layout_weight=".03"
+                        android:drawableLeft="@drawable/pickup_shape"
+                        android:gravity="start"
+                        android:text="@string/pickup_value"
+                        android:textColor="@color/colorText"
+                        android:textSize="10sp" />
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10DP"
+                        android:layout_weight=".03"
+                        android:drawableLeft="@drawable/rekki_pickup_shape"
+                        android:gravity="start"
+                        android:text="@string/recce_pickup"
+                        android:textColor="@color/colorText"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum=".14">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".05"
+                            android:gravity="center"
+                            android:text="MANIFEST TYPE"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="PENDING"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="21dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="PICKED"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="FAILED"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <LinearLayout
+                        android:id="@+id/seller"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/dashboardtool"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum=".14">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".05"
+                            android:gravity="center"
+                            android:text="SELLER"
+                            android:textColor="@color/colorAccent1"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.vendorAssignedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.vendorPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.vendorUnPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <LinearLayout
+                        android:id="@+id/warehouse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/dashboardtool"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum=".14">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".05"
+                            android:gravity="center"
+                            android:text="WRH"
+                            android:textColor="@color/colorAccent1"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.warehouseAssignedcount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.warehousePickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.warehouseUnPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <LinearLayout
+                        android:id="@+id/recce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/dashboardtool"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum=".14">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".05"
+                            android:gravity="center"
+                            android:text="RECCE"
+                            android:textColor="@color/colorAccent1"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recciAssignedcount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recciPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recciUnPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <LinearLayout
+                        android:id="@+id/recc_ven"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/dashboardtool"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum=".14">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".05"
+                            android:gravity="center"
+                            android:text="RECCE + SELLER"
+                            android:textColor="@color/colorAccent1"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recci_venAssignedcount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recci_venPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recci_venUnPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <LinearLayout
+                        android:id="@+id/recce_wrh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/dashboardtool"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum=".14">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".05"
+                            android:gravity="center"
+                            android:text="RECCE + WRH"
+                            android:textColor="@color/colorAccent1"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recci_wrhAssignedcount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recci_wrhPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_2DP"
+                            android:layout_weight=".03"
+                            android:gravity="center"
+                            android:text="@{viewModel.recci_wrhUnPickedCount}"
+                            android:textColor="@color/gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/todo_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBackground" />
+            </LinearLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigationView"
+                style="@style/Widget.Design.NavigationView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:background="@color/colorBackground"
+                android:textSize="13sp"
+                app:itemIconTint="@color/white"
+                app:itemTextColor="@color/white"><!--
+                app:menu="@menu/filters"-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBackground"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/todo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:orientation="vertical"
+                        tools:ignore="IncludeLayoutParam">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_200DP"
+                            android:layout_gravity="bottom"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="bottom"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/_5DP">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_5DP"
+                                android:layout_weight=".09"
+                                android:gravity="bottom"
+                                android:text="@string/drsfilter"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="bottom"
+                                android:layout_weight=".0"
+                                android:gravity="bottom"
+                                android:orientation="horizontal" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|bottom"
+                                android:background="@null"
+                                android:gravity="end|bottom"
+                                android:onClick="@{() -> viewModel.onClearFilterClick()}"
+                                android:padding="@dimen/_10DP"
+                                android:src="@drawable/clearfilter"
+                                android:tint="@color/white" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimaryDark" />
+                    </LinearLayout>
+                    <!--
+                                    <ExpandableListView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/todo"
+                                        android:backgroundTint="@color/colorAccent1"
+                                        android:dividerHeight="0dp"
+                                        android:paddingBottom="@dimen/_100DP" />-->
+                    <ExpandableListView
+                        android:id="@+id/left_drawer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/todo"
+                        android:dividerHeight="0dp" />
+                    <!--
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="0dip"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:gravity="center|bottom"
+                                            android:orientation="vertical">-->
+                    <LinearLayout
+                        android:id="@+id/scanbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:gravity="bottom">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent1"
+                            android:onClick="@{() -> viewModel.onApplyClick()}"
+                            android:text="@string/Apply"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

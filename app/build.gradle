@@ -1,0 +1,206 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin:  'com.google.firebase.crashlytics'
+apply plugin:  'com.google.gms.google-services'
+
+android {
+    signingConfigs {
+        /* release {
+                   storeFile file('/home/deepak/Desktop/backup/EcomJks.jks')
+                   storePassword 'android'
+                   keyAlias 'android'
+                   keyPassword 'android'
+               }
+*/
+    }
+
+
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "in.ecomexpress.sruti"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 29
+        versionName '2.0.36'
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+        lintOptions {
+            abortOnError false
+        }
+//        signingConfig signingConfigs.release
+
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi-v7a'
+            universalApk true
+        }
+    }
+    buildTypes {
+        debug {
+
+            def localProperties = new Properties()
+            localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+            String shield_id= localProperties.getProperty("Shield_ID")
+            String shield_key = localProperties.getProperty("Shield_Key")
+            buildConfigField("String", "SHIELD_ID", "\"$shield_id\"")
+            buildConfigField("String", "SHIELD_KEY", "\"$shield_key\"")
+            buildConfigField("String", "BASE_URL", "\"https://sruti.ecomexpress.in/sruti/services/\"")
+
+         //   buildConfigField("String", "BASE_URL", "\"https://j5s4r8kkp5.execute-api.ap-south-1.amazonaws.com/sruti/services/\"")// testing
+            // buildConfigField("String", "BASE_URL", "\"https://sruti-uat.ecomexpress.in/sruti/services/\"")// UAT testing
+            // buildConfigField("String", "BASE_URL", "\"https://sruti.ecomexpress.in/sruti/services/\"") //live// 62067 ecom@123
+            //   buildConfigField("String", "BASE_URL", "\"http://13.234.4.81:8080/sruti/services/\"") // development
+            //         buildConfigField("String", "BASE_URL", "\"http://52.66.119.133:8080/sruti/services/\"")// testing
+            //   buildConfigField("String", "BASE_URL", "\"http://192.168.0.121:9090/sruti/services/\"")  // Local
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            def localProperties = new Properties()
+            localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+            String shield_id= localProperties.getProperty("Shield_ID")
+            String shield_key = localProperties.getProperty("Shield_Key")
+            buildConfigField("String", "SHIELD_ID", "\"$shield_id\"")
+            buildConfigField("String", "SHIELD_KEY", "\"$shield_key\"")
+
+            buildConfigField("String", "BASE_URL", "\"https://sruti.ecomexpress.in/sruti/services/\"")
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+        //    signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    repositories {
+        mavenCentral()
+        flatDir {
+            dirs 'libs' //this way we can find the .aar file in libs folder
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildscript {
+        ext.kotlin_version = '1.5.20' // <= expected version is 1.5.1
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    // RxJava Dependencies (React Android)
+    /*  implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+      implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+      implementation 'androidx.room:room-rxjava2:2.0.0'*/
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'androidx.room:room-rxjava2:2.5.1'
+    // Dagger Dependencies (Dependency Injection)
+    implementation 'com.google.dagger:dagger:2.16'
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.16'
+    implementation 'com.google.dagger:dagger-android-support:2.16'
+    annotationProcessor 'com.google.dagger:dagger-android-support:2.16'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    // Lifecycle Component Dependencies
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+    annotationProcessor 'androidx.room:room-compiler:2.5.1'
+    // Networking
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-jackson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.4'
+    //bar code scanner
+    implementation 'com.akexorcist:googledirectionlibrary:1.0.4'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.8'
+    //noinspection GradleCompatible
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-base:16.0.0'
+    implementation 'com.github.bumptech.glide:glide:3.6.1'
+    // Multidex
+    implementation 'androidx.multidex:multidex:2.0.0'
+
+    /** ************ zxing gradle *****************************/
+    implementation('com.journeyapps:zxing-android-embedded:3.5.0')
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation files('libs/nlscan_sdk_master.jar')
+    implementation project(':barcode_handler_v1.0.0')
+    implementation project(':geolocationfinder-debug')
+    implementation "com.andkulikov:transitionseverywhere:1.8.1"
+    implementation('com.google.maps:google-maps-services:0.1.20')
+    implementation( "com.google.maps.android:android-maps-utils:1.2.1")
+    // implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+
+
+    //crashlytics
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:31.2.3')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    /*   implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.5'
+       implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'*/
+    implementation "com.google.android.gms:play-services-auth:20.4.1"
+    implementation "io.esper.devicesdk:app:+"
+/*    implementation 'androidx.core:core-ktx:1.10.1'*/
+
+    // implementi1ng Shield
+    // implementation 'com.shield.android:shield-fraud:1.6.+'
+    implementation ('com.shield.android:shield-fraud:1.6.+')
+            {
+                exclude group: "org.slf4j", module: "slf4j-api"
+            }
+
+    implementation ('androidx.preference:preference') {
+
+        version {
+
+            strictly '1.0.0' // this should be the version you are using, if you are already using androidx preference library
+
+        }
+
+    }
+    /*implementation 'com.getkeepsafe.relinker:relinker:1.4.3'*/
+}

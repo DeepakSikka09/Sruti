@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "929328798750",
+    "project_id": "sruti-d921f",
+    "storage_bucket": "sruti-d921f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929328798750:android:f5c21ce8c54ec45f35e20f",
+        "android_client_info": {
+          "package_name": "in.ecomexpress.sruti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929328798750-ed3a8iio7plcq2ioh084a1eqgnp1fum6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.ecomexpress.sruti",
+            "certificate_hash": "f739bb58947b552755143377eac44cae3f1927be"
+          }
+        },
+        {
+          "client_id": "929328798750-f40dg2tcfvnrlhon30n56j8eq06p7op2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.ecomexpress.sruti",
+            "certificate_hash": "b09f0e9ed1607ce03f8446e33496883a67692495"
+          }
+        },
+        {
+          "client_id": "929328798750-op7pqk8di998cj6qotajpkggu6ckbm1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.ecomexpress.sruti",
+            "certificate_hash": "45cad2d8d0b0c6a1b63026c81db843ba9dcde90c"
+          }
+        },
+        {
+          "client_id": "929328798750-b0k2j4j0452018hfcmq6ohkusff40d4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMvA5VGwSGZktoKTUoHXiTaCoLdz6RxRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929328798750-b0k2j4j0452018hfcmq6ohkusff40d4b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

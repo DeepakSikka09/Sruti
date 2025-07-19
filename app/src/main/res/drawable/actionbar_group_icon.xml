@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+
+        android:drawable="@drawable/notification"
+        android:width="@dimen/_50DP"
+        android:height="@dimen/_50DP"
+        android:gravity="center" />
+
+    <item
+        android:id="@+id/ic_group_count"
+        android:drawable="@color/transparent" />
+
+</layer-list>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.stoptrip.StopTripViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/popup_element"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="10px"
+            app:cardBackgroundColor="@color/colorBackground"
+            app:cardCornerRadius="@dimen/_7DP"
+            app:cardElevation="@dimen/_25DP">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5DP"
+                android:background="@color/colorBackground"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:elevation="10px"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/_10DP"
+                        android:text="@string/stop_trip"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/cross"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="end|right"
+                        android:layout_margin="@dimen/_10DP"
+                        android:layout_weight="0.02"
+                        android:padding="@dimen/_10DP"
+                        android:tint="@color/colorPrimaryDark"
+                        app:srcCompat="@drawable/ic_cross" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorView" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_10DP">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5DP"
+                            android:gravity="start|center"
+                            android:text="@string/vehicle_owner"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:id="@+id/vehicle_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="end"
+                            android:text="Company Vehicle"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp" />
+                        <!--  <Spinner
+                              android:id="@+id/spinner_vehicle_type"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              android:layout_weight=".04"
+                              android:backgroundTint="@color/red_ecom"
+                              android:entries="@array/veh_type"
+                              android:gravity="end"
+                              android:padding="@dimen/_10DP" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_10DP">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5DP"
+                            android:gravity="start|center"
+                            android:text="@string/vehicle_type"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:id="@+id/typeofvehicle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="end"
+                            android:text="@{viewModel.vehicle_type}"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp" />
+                        <!--
+                                                <Spinner
+                                                    android:id="@+id/spinner_typeofvehicle"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:layout_weight=".04"
+                                                    android:backgroundTint="@color/red_ecom"
+                                                    android:entries="@array/type_of_veh"
+                                                    android:gravity="end"
+                                                    android:padding="@dimen/_10DP" />-->
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_10DP"
+                        android:textColorHint="@color/dark_gray">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5DP"
+                            android:gravity="start|center"
+                            android:text="@string/veh_num"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:id="@+id/vehcilenostop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="end"
+                            android:singleLine="true"
+                            android:text="@{viewModel.vehicle_no}"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp"
+                            tools:ignore="RtlHardcoded" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_10DP"
+                        android:textColorHint="@color/dark_gray">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5DP"
+                            android:gravity="start|center"
+                            android:text="Start Trip Reading"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:id="@+id/trip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="end"
+                            android:singleLine="true"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp"
+                           />
+<!--android:toString="@{viewModel.start_meter_reading}"-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum=".1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".09"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_5DP"
+
+                            android:paddingRight="@dimen/_5DP"
+                            android:textColorHint="@color/dark_gray">
+
+                            <EditText
+                                android:id="@+id/et_meter"
+                                style="@style/TextStyle.Title.Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:cursorVisible="true"
+                                android:digits="0123456789."
+                                android:hint="@string/hint_enter_stop_meter_reading"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@={viewModel.stop_meter_reading}"
+                                android:textSize="13sp"
+                                tools:ignore="RtlHardcoded" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/stop_image"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_weight=".01"
+                            android:gravity="end"
+                            android:paddingLeft="@dimen/_5DP"
+                            android:paddingRight="@dimen/_5DP"
+                            app:srcCompat="@drawable/cam" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum=".1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight=".08"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_5DP"
+                            android:paddingRight="@dimen/_5DP"
+                            android:textColorHint="@color/dark_gray">
+
+                            <EditText
+                                android:id="@+id/et_other_exprense"
+                                style="@style/TextStyle.Title.Sub"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:cursorVisible="true"
+                                android:hint="@string/hint_enter_other_expense"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="@={viewModel.other_expences}"
+                                android:textSize="13sp"
+                                tools:ignore="RtlHardcoded" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10DP"
+                    android:orientation="horizontal"
+                    app:cardCornerRadius="@dimen/_7DP"
+                    app:cardElevation="@dimen/_25DP">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/generic_button"
+                        android:gravity="center"
+                        android:onClick="@{(view)-> viewModel.validationStopTrip()}"
+                        android:text="@string/submit_"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--  <android.support.v4.widget.ContentLoadingProgressBar
+                  android:id="@+id/address_looking_up"
+                  style="?android:attr/progressBarStyleLarge"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:indeterminate="true"
+                  android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />
+  -->
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

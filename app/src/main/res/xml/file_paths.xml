@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="my_images" path="Android/data/in.ecomexpress.sruti/files/Pictures" />
+    <external-cache-path path="./" name="cache_files" />
+    <cache-path path="./" name="cache_files" />
+    <external-files-path name="cache_files" path="/"/>
+</paths>

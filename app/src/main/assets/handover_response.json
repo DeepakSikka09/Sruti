@@ -1,0 +1,15 @@
+{
+  "code": 0,
+  "description": "string",
+  "response": {
+    "listOfAwbs": [
+      {
+        "awb": 0,
+        "manifest_id": 0,
+        "order_number": "string",
+        "status_code": "string"
+      }
+    ]
+  },
+  "status": true
+}

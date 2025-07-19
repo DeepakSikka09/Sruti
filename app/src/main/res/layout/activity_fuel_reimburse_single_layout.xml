@@ -1,0 +1,579 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.fuel.FuelReimburseItemViewModel" />
+
+    </data>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5DP"
+            app:cardBackgroundColor="@color/colorView"
+            app:cardCornerRadius="@dimen/_7DP"
+            app:cardElevation="@dimen/_10DP">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5DP"
+                android:background="@color/colorView"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/wheelerType"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_20DP"
+                        android:layout_gravity="center"
+                        android:layout_weight=".01"
+                        android:gravity="center"
+                        android:tint="@color/red_ecom"
+                        android:visibility="gone" />
+
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:id="@+id/route"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".08"
+                        android:gravity="start"
+                        android:hint="Gurgram"
+                        android:padding="@dimen/_5DP"
+                        android:text="@{ viewModel.TripName}"
+                        android:textColor="@color/colorAccent1"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/map"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_weight=".01"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_action_trip" />
+
+
+
+                </LinearLayout>
+
+                <!--   <android.support.v7.widget.CardView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center"
+                       android:layout_weight=".09"
+                       app:cardBackgroundColor="@color/colorView"
+                       app:cardCornerRadius="@dimen/_7DP"
+                       app:cardElevation="@dimen/_10DP">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/_2DP"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".03"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20DP"
+                            android:layout_height="@dimen/_20DP"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10DP"
+                            android:gravity="center"
+                            android:src="@drawable/calender"
+                            android:tint="@color/colorPrimaryDark" />
+
+                       <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@{ viewModel.TripDate()}"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".03"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20DP"
+                            android:layout_height="@dimen/_20DP"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10DP"
+                            android:gravity="center"
+                            android:src="@drawable/time"
+                            android:tint="@color/colorPrimaryDark" />
+
+                         <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@{ viewModel.TripTime()}"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".03"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:layout_width="@dimen/_20DP"
+                            android:layout_height="@dimen/_20DP"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10DP"
+                            android:gravity="center"
+                            android:src="@drawable/distance"
+                            android:tint="@color/colorPrimaryDark" />
+
+                         <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:id="@+id/Distance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@{ viewModel.TripDistance()}"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/colorView"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum=".12">
+
+                     <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".03"
+                        android:gravity="center"
+                        android:text="Shipment"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".03"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20DP"
+                            android:layout_height="@dimen/_20DP"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="center"
+                            android:src="@drawable/deliver"
+                            android:tint="@color/green" />
+
+                         <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:hint="2"
+                            android:text="@{ viewModel.Delivered()}"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".03"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20DP"
+                            android:layout_height="@dimen/_20DP"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="center"
+                            android:src="@drawable/undeliver"
+                            android:tint="@color/red_ecom" />
+
+                         <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:hint="3"
+                            android:text="@{ viewModel.Undelivered()}"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".03"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+
+                        <ImageView
+                            android:layout_width="@dimen/_20DP"
+                            android:layout_height="@dimen/_20DP"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="center"
+                            android:src="@drawable/undeliver"
+                            android:tint="@color/red_ecom" />
+
+                         <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:hint="2"
+                            android:text="@{ viewModel.Pending()}"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <!--</android.support.v7.widget.CardView>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum=".09">
+
+                    <!--    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_weight=".03"
+                           android:gravity="center"
+                           android:teShipmentsment"
+                           android:textColor="@color/black"
+                           android:textSize="12sp" />-->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".03"
+                        app:cardBackgroundColor="@color/colorView"
+                        app:cardCornerRadius="@dimen/_7DP"
+                        app:cardElevation="@dimen/_10DP">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Delivered"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                                android:id="@+id/delivered"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@{ viewModel.Delivered()}"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".03"
+                        app:cardBackgroundColor="@color/colorView"
+                        app:cardCornerRadius="@dimen/_7DP"
+                        app:cardElevation="@dimen/_10DP">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Undelivered"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                                android:id="@+id/undelivered"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@{ viewModel.Undelivered()}"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".03"
+                        app:cardBackgroundColor="@color/colorView"
+                        app:cardCornerRadius="@dimen/_7DP"
+                        app:cardElevation="@dimen/_10DP">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Pending"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                                android:id="@+id/pending"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@{ viewModel.Pending()}"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum=".06">
+
+                    <!--    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center"
+                           android:layout_weight=".03"
+                           android:gravity="center"
+                           android:text="Reimburse"
+                           android:textColor="@color/black"
+                           android:textSize="12sp" />
+   -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".03"
+                        android:padding="@dimen/_2DP"
+                        app:cardBackgroundColor="@color/colorView"
+                        app:cardCornerRadius="@dimen/_7DP"
+                        app:cardElevation="@dimen/_10DP">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Amount: "
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/claimed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/_5DP"
+                                android:layout_marginStart="@dimen/_5DP"
+                                android:gravity="center"
+                                android:text="@{ viewModel.Claimed()}"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".03"
+                        android:padding="@dimen/_2DP"
+                        app:cardBackgroundColor="@color/colorView"
+                        app:cardCornerRadius="@dimen/_7DP"
+                        app:cardElevation="@dimen/_10DP">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:visibility="visible"
+                            android:orientation="horizontal">
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Status: "
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                             <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/approved"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/_5DP"
+                                android:layout_marginStart="@dimen/_5DP"
+                                android:gravity="center"
+                                android:text="@{ viewModel.Status()}"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_margin="@dimen/_5DP"
+                    android:padding="@dimen/_2DP"
+                    android:paddingEnd="@dimen/_10DP"
+                    android:paddingStart="@dimen/_10DP"
+                    app:cardBackgroundColor="@color/colorView"
+                    app:cardCornerRadius="@dimen/_7DP"
+                    app:cardElevation="@dimen/_10DP">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                         <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Status: "
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        
+                            android:id="@+id/status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5DP"
+                            android:layout_marginStart="@dimen/_5DP"
+                            android:gravity="center"
+                            android:text="@{ viewModel.Status()}"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+</layout>

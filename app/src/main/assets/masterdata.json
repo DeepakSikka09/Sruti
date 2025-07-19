@@ -1,0 +1,242 @@
+{
+  "status": true,
+  "code": 200,
+  "description": "success",
+  "response": {
+    "reason_code_list": [
+      {
+        "reason_id": 2,
+        "reason_code": "RSN_00_40",
+        "reason_msg": "Attempted - Wrong Address",
+        "attribute": null,
+        "sub_group": "Address Issues"
+      },
+      {
+        "reason_id": 3,
+        "reason_code": "RSN_00_50",
+        "reason_msg": "Incomplete Address",
+        "attribute": null,
+        "sub_group": "Address Issues"
+      },
+      {
+        "reason_id": 4,
+        "reason_code": "RSN_00_60",
+        "reason_msg": "Shifted From The Given Address",
+        "attribute": {
+          "MANIFEST": true,
+          "MANUAL_PICKUP_FAILED_REASONS": true
+        },
+        "sub_group": "Address Issues"
+      },
+      {
+        "reason_id": 6,
+        "reason_code": "RSN_10_10",
+        "reason_msg": "Premise Closed",
+        "attribute": {
+          "MANIFEST": true,
+          "MANUAL_PICKUP_FAILED_REASONS": true
+        },
+        "sub_group": "Non Availability Issues"
+      },
+      {
+        "reason_id": 12,
+        "reason_code": "RSN_10_70",
+        "reason_msg": "Attempted - Incorrect OTP",
+        "attribute": null,
+        "sub_group": "Non Availability Issues"
+      },
+      {
+        "reason_id": 13,
+        "reason_code": "RSN_10_80",
+        "reason_msg": "Attempted - OTP Not Available",
+        "attribute": null,
+        "sub_group": "Non Availability Issues"
+      },
+      {
+        "reason_id": 14,
+        "reason_code": "RSN_10_90",
+        "reason_msg": "Attempted - Incorrect Secure Code",
+        "attribute": null,
+        "sub_group": "Non Availability Issues"
+      },
+      {
+        "reason_id": 15,
+        "reason_code": "RSN_10_100",
+        "reason_msg": "Attempted - Secure Code Not Available",
+        "attribute": null,
+        "sub_group": "Non Availability Issues"
+      },
+      {
+        "reason_id": 16,
+        "reason_code": "RSN_20_10",
+        "reason_msg": "Shipment Not Ready",
+        "attribute": {
+          "MANUAL_PICKUP_FAILED_REASONS": true,
+          "SHIPMENT": true
+        },
+        "sub_group": "Not Handed Over Issue"
+      },
+      {
+        "reason_id": 17,
+        "reason_code": "RSN_20_20",
+        "reason_msg": "Shipment Not Handed Over",
+        "attribute": {
+          "MANUAL_PICKUP_FAILED_REASONS": true,
+          "SHIPMENT": true
+        },
+        "sub_group": "Not Handed Over Issue"
+      },
+      {
+        "reason_id": 20,
+        "reason_code": "RSN_20_50",
+        "reason_msg": "Barcode Not Readable",
+        "attribute": {
+          "MANUAL_PICKUP_FAILED_REASONS": true,
+          "SHIPMENT": true
+        },
+        "sub_group": "Not Handed Over Issue"
+      },
+      {
+        "reason_id": 23,
+        "reason_code": "RSN_30_30",
+        "reason_msg": "Road Blocked/Premise Inaccessible",
+        "attribute": {
+          "MANIFEST": true,
+          "MANUAL_PICKUP_FAILED_REASONS": true
+        },
+        "sub_group": "Non Serviceabilty"
+      },
+      {
+        "reason_id": 26,
+        "reason_code": "RSN_40_10",
+        "reason_msg": "Shipment Picked Up By Other Courier",
+        "attribute": {
+          "MANUAL_PICKUP_FAILED_REASONS": true,
+          "SHIPMENT": true
+        },
+        "sub_group": "Refusal/Cancellation"
+      },
+      {
+        "reason_id": 38,
+        "reason_code": "RSN_50_10",
+        "reason_msg": "Pick up attempted late",
+        "attribute": {
+          "MANIFEST": true,
+          "MANUAL_PICKUP_FAILED_REASONS": true
+        },
+        "sub_group": "Rescheduled"
+      },
+      {
+        "reason_id": 60,
+        "reason_code": "RSN_80_40",
+        "reason_msg": "Capacity Contraint",
+        "attribute": null,
+        "sub_group": "Refusal/Cancellation"
+      }
+    ],
+    "global_configuration": [
+      {
+        "config_group": "SYNC_RESCHEDULE_STATUS_WITH_V1",
+        "config_value": "FALSE"
+      },
+      {
+        "config_group": "SRUTI_ENABLE_LIVE_TRACKING",
+        "config_value": "FALSE"
+      },
+      {
+        "config_group": "SRUTI_ENABLE_ERM_SYNC",
+        "config_value": "FALSE"
+      }
+    ],
+    "callbridge_configuration": {},
+    "banner_configuration": {
+      "dashboard_banner": [
+        {
+          "short_url": "https://www.ecomexpress.in/ecom-assets/uploads/2017/01/ecom-logo.png",
+          "long_url": "https://www.ecomexpress.in/ ",
+          "title": "Ecom Express"
+        },
+        {
+          "short_url": "https://ecom-link.s3.ap-south-1.amazonaws.com/Udaan-Banner.JPG",
+          "long_url": "https://ecom-link.s3.ap-south-1.amazonaws.com/Udaan-Banner.JPG",
+          "title": "Leave Management"
+        }
+      ]
+    },
+    "general_question": [
+      {
+        "value_array": [
+          "[\"Yes\", \"No\"]"
+        ],
+        "ans_type": "SELECTION",
+        "option": "M",
+        "type": "SELECTION",
+        "id": 8,
+        "qtag": "Location is Warehouse?"
+      },
+      {
+        "value_array": [
+          "[\"Yes\", \"No\"]"
+        ],
+        "ans_type": "SELECTION",
+        "option": "M",
+        "type": "SELECTION",
+        "id": 7,
+        "qtag": "Network issue?"
+      },
+      {
+        "value_array": [
+          null
+        ],
+        "ans_type": "TIME_DURATION",
+        "option": "M",
+        "type": "TIME_DURATION",
+        "id": 10,
+        "qtag": "Working hours?"
+      },
+      {
+        "value_array": [
+          "[\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"]"
+        ],
+        "ans_type": "DROPDOWN",
+        "option": "M",
+        "type": "DROPDOWN",
+        "id": 9,
+        "qtag": "Non-working days?"
+      },
+      {
+        "value_array": [
+          "[\"Yes\", \"No\"]"
+        ],
+        "ans_type": "SELECTION",
+        "option": "M",
+        "type": "SELECTION",
+        "id": 3,
+        "qtag": "Is Pincode correct?",
+        "additional_control": "{\"watermark\": \"Provide correct pincode\", \"control_type\": \"INPUT\", \"display_condition\": \"No\"}"
+      },
+      {
+        "value_array": [
+          "[\"Yes\", \"No\"]"
+        ],
+        "ans_type": "SELECTION",
+        "option": "M",
+        "type": "SELECTION",
+        "id": 5,
+        "qtag": "Contact number shared is correct?",
+        "additional_control": "{\"watermark\": \"Provide correct contact number\", \"control_type\": \"INPUT\", \"display_condition\": \"No\"}"
+      },
+      {
+        "value_array": [
+          "[\"Yes\", \"No\"]"
+        ],
+        "ans_type": "SELECTION",
+        "option": "M",
+        "type": "SELECTION",
+        "id": 1,
+        "qtag": "Is address correct?",
+        "additional_control": "{\"watermark\": \"Provide complete address\", \"control_type\": \"INPUT\", \"display_condition\": \"No\"}"
+      }
+    ]
+  }
+}

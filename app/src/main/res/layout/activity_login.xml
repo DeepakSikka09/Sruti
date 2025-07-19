@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="in.ecomexpress.sruti.ui.login.login.LoginActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.login.login.LoginViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_header"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/sruti" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:weightSum=".09"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/spinner_lnt"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".01"
+                android:layout_gravity="center"
+                android:layout_below="@+id/image_header">
+
+                <Spinner
+                    android:id="@+id/language_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/colorAccent"
+                    android:entries="@array/languages"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:padding="@dimen/_10DP"
+                    android:textSize="12sp"
+                    android:theme="@style/MatchSpinnerTheme" />
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:id="@+id/version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/language_spinner"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/_10DP"
+                    android:gravity="center|left"
+                    android:padding="@dimen/_10DP"
+                    android:text="@string/v2_0_0"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lltFooter"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".06"
+                android:layout_gravity="center"
+                android:layout_below="@+id/spinner_lnt"
+                android:orientation="vertical">
+
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_10DP"
+                    android:gravity="center"
+                    android:text="@string/welcome"
+                    android:textColor="@color/colorAccent1"
+                    android:textSize="13sp" />
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_5DP"
+                    android:gravity="center"
+                    android:text="@string/login_to_continue"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_50DP"
+                    android:textColorHint="@color/dark_gray">
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        style="@style/TextStyle.Title.Sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_90DP"
+                        android:layout_marginLeft="@dimen/_20DP"
+                        android:layout_marginRight="@dimen/_20DP"
+                        android:cursorVisible="true"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                        android:hint="@string/hint_username"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="50"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10DP"
+                        android:paddingBottom="@dimen/_10DP"
+                        android:singleLine="true"
+                        android:text=""
+                        tools:ignore="RtlHardcoded" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/dark_gray"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        style="@style/TextStyle.Title.Sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_90DP"
+                        android:layout_marginLeft="@dimen/_20DP"
+                        android:layout_marginRight="@dimen/_20DP"
+                        android:layout_marginTop="@dimen/_20DP"
+                        android:cursorVisible="true"
+                        android:hint="@string/hint_password"
+                        android:inputType="textPassword"
+                        android:maxLength="50"
+                        android:padding="@dimen/_10DP"
+                        android:paddingBottom="@dimen/_10DP"
+                        android:text=""
+                        tools:ignore="RtlHardcoded" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/btnServerLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15DP"
+                    android:layout_marginRight="@dimen/_15DP"
+                    android:layout_marginTop="@dimen/_20DP"
+                    android:background="@drawable/generic_button"
+                    android:elevation="10px"
+                    android:onClick="@{() -> viewModel.onServerLoginClick()}"
+                    android:text="@string/text_login"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cardCornerRadius="@dimen/_7DP"
+                    tools:ignore="RtlHardcoded" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".01"
+                android:layout_gravity="center"
+                android:layout_below="@+id/lltFooter"
+                android:layout_margin="@dimen/_20DP"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10DP">
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:id="@+id/btnForgetPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:onClick="@{() -> viewModel.onForgetPasswordClick()}"
+                    android:text="@string/forget_password"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="end"
+                    android:onClick="@{() -> viewModel.onCallITSupportClick()}"
+                    android:orientation="horizontal">
+
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_15DP"
+                        android:layout_marginStart="@dimen/_15DP"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:text="@string/call_it_support"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/call_bridge"
+                        android:layout_width="@dimen/_30DP"
+                        android:layout_height="@dimen/_30DP"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_5DP"
+                        android:src="@drawable/ic_action_call_it"
+                        android:tint="@color/colorAccent1" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                android:id="@+id/tvCopyright"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".01"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_10DP"
+                android:padding="@dimen/_10DP"
+                android:gravity="bottom|center"
+                android:text="@string/copyright_txt"
+                android:textColor="@color/colorAccent1"
+                android:textSize="12sp" />
+        </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

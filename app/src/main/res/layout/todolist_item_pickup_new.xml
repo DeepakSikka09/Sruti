@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup_element"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/Linear_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/colors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <LinearLayout
+                android:id="@+id/color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_20DP"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:id="@+id/consignee_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_toLeftOf="@+id/action_icon"
+                        android:gravity="start"
+                        android:hint=""
+                        android:maxLines="2"
+                        android:padding="@dimen/_1DP"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:id="@+id/scanned_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="end"
+                        android:textColor="@color/colorText"
+                        android:textColorHint="@color/colorText"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/action_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="end"
+                        android:background="@null"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:weightSum=".10">
+
+                        <ImageView
+                            android:id="@+id/call"
+                            android:layout_width="@dimen/_50DP"
+                            android:layout_height="@dimen/_50DP"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10DP"
+                            android:layout_marginEnd="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:elevation="10px"
+                            android:gravity="end"
+                            android:padding="@dimen/_3DP"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/ic_call_new"
+
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <!-- android:onClick="@{() -> viewModel.onCallClick()}"-->
+                        <ImageView
+                            android:id="@+id/navView"
+                            android:layout_width="@dimen/_50DP"
+                            android:layout_height="@dimen/_50DP"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10DP"
+                            android:layout_marginEnd="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:elevation="10px"
+                            android:gravity="end"
+                            android:padding="@dimen/_1DP"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/ic_map"
+                            tools:ignore="VectorDrawableCompat" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pickup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_5DP"
+                    android:paddingLeft="@dimen/_5DP">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10DP"
+                          android:orientation="vertical">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/client_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:gravity="start"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:padding="@dimen/_2DP"
+                            android:textColor="@color/maroon_color"
+                            android:textColorHint="@color/maroon_color"
+                            android:textSize="14sp" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/client_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/_10DP"
+                            android:gravity="start"
+                            android:hint=""
+                            android:maxLines="1"
+                            android:textColor="@color/colorText"
+                            android:textColorHint="@color/colorText"
+                            android:textSize="@dimen/_15sp"
+                            android:textStyle="bold" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/addressline1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="@dimen/_8DP"
+                            android:gravity="start"
+                            android:hint=""
+                            android:textColor="@color/text_color_dark_grey"
+                            android:textColorHint="@color/text_color_dark_grey"
+                            android:textSize="12sp" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/full_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:gravity="start"
+                            android:hint="Address"
+                            android:maxLines="2"
+                            android:textColor="@color/colorText"
+                            android:textColorHint="@color/colorText"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20DP">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/scheduled_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginEnd="@dimen/_2DP"
+                                android:layout_marginRight="@dimen/_2DP"
+                                android:layout_toLeftOf="@+id/tv_mid_no"
+                                android:gravity="start"
+                                android:text=""
+                                android:textColor="@color/blue_ecom"
+                                android:textColorHint="@color/blue_ecom"
+                                android:textSize="12sp"
+                                android:visibility="visible" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_mid_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:text=""
+                                android:textColor="@color/maroon_color"
+                                android:textColorHint="@color/maroon_color"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+                        <!--</LinearLayout>-->
+                    </LinearLayout>
+                    <!--call n navigation icon-->
+                <!--    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:id="@+id/scheduled_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginEnd="@dimen/_2DP"
+                        android:layout_marginRight="@dimen/_2DP"
+                        android:gravity="start"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="12sp"
+                        android:visibility="visible" />-->
+                </RelativeLayout>
+
+             <!--   <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:id="@+id/scheduled_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="@dimen/_2DP"
+                    android:layout_marginRight="@dimen/_2DP"
+                    android:gravity="start"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="12sp"
+                    android:visibility="gone" />-->
+
+                <LinearLayout
+                    android:id="@+id/tray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5DP"
+                    android:layout_marginTop="@dimen/_10DP"
+                    android:visibility="visible"
+                    android:weightSum=".10">
+
+                    <LinearLayout
+                        android:id="@+id/inner_tray"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight=".08"
+                        android:gravity="start"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5DP">
+
+                        <ImageView
+                            android:id="@+id/qrcode_scan"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15DP"
+                            android:layout_marginLeft="@dimen/_15DP"
+                            android:scaleType="centerCrop"
+                            android:tint="@color/black"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_qrcode" />
+
+                        <ImageView
+                            android:id="@+id/location_verification"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15DP"
+                            android:layout_marginLeft="@dimen/_15DP"
+                            android:scaleType="centerCrop"
+                            android:tint="@color/black"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_packet" />
+
+                        <ImageView
+                            android:id="@+id/verifyGeocode"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15DP"
+                            android:layout_marginLeft="@dimen/_15DP"
+                            android:scaleType="centerCrop"
+                            android:tint="@color/black"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/verified" />
+
+                        <ImageView
+                            android:id="@+id/advance_item"
+                            android:layout_width="15dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_15DP"
+                            android:layout_marginLeft="@dimen/_15DP"
+                            android:scaleType="centerCrop"
+                            android:tint="@color/black"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_advance" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/tvExpressPlus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2DP"
+                            android:gravity="start"
+                            android:hint="Express+"
+                            android:maxLines="1"
+                            android:padding="@dimen/_2DP"
+                            android:textColor="@color/red"
+                            android:textColorHint="@color/red"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/clickView"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight=".02"
+                        android:gravity="end"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:weightSum=".10">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/more_less"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_5DP"
+                            android:layout_marginRight="@dimen/_5DP"
+                            android:layout_weight=".07"
+                            android:background="@null"
+                            android:gravity="center|end"
+                            android:text="more"
+                            android:textColor="@color/red"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/indicator"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="@dimen/_5DP"
+                            android:layout_marginLeft="@dimen/_5DP"
+                            android:layout_weight=".03"
+                            android:background="@null"
+                            android:backgroundTint="@color/red"
+                            android:gravity="center"
+                            android:tint="@color/red"
+                            android:visibility="visible"
+                            tools:ignore="VectorDrawableCompat" />
+                    </LinearLayout>
+                    <!--android:onClick="@{() -> viewModel.onIndicatorClick()}"
+                            android:src="@{viewModel.indicator ? @drawable/ic_arrowupdown : @drawable/ic_arrowup}"
+                            -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/colorBackground"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_8DP"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ic_remarks" />
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:id="@+id/remarks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_10DP"
+                        android:layout_marginLeft="@dimen/_10DP"
+                        android:gravity="start"
+                        android:textColor="@color/red"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E1"/>
+</LinearLayout>

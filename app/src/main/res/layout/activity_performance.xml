@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.performance.PerformanceActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.performance.PerformanceViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:elevation="10px"
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:orientation="horizontal"
+            android:weightSum=".1">
+
+
+            <ImageView
+                android:id="@+id/back"
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:gravity="start"
+                android:onClick="@{() -> viewModel.onBackClick()}"
+                android:padding="@dimen/_10DP"
+                app:srcCompat="@drawable/back"
+                android:tint="@color/colorPrimaryDark" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:padding="@dimen/_15DP"
+                android:text="Statistics"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_10DP"
+                android:layout_marginRight="@dimen/_10DP"
+                android:gravity="center|end"
+                android:text="@string/v2_0_0"
+                android:textColor="@color/colorAccent1"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorView" />
+        <!-- <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="150dp"
+             android:orientation="vertical">
+         </LinearLayout>-->
+
+        <WebView
+            android:id="@+id/performance_webciew"
+            android:layout_width="match_parent"
+            android:background="@color/colorBackground"
+            android:layout_height="match_parent"></WebView>
+    </LinearLayout>
+
+</layout>

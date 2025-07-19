@@ -1,0 +1,373 @@
+{
+  "status": true,
+  "code": 200,
+  "description": "success",
+  "response": {
+    "manifest_list_data": [
+      {
+        "cust_code": "49127",
+        "cust_name": "JAYPORE E- COMMERCE PRIVATE LIMITED",
+        "assign_date": 1580110791000,
+        "manifest_No": 120037,
+        "shipment_status": "PKP_20",
+        "remarks": "N/A",
+        "manifest_type": "P",
+        "total_shipment_count": 2,
+        "sequence_no": 1,
+        "location_type": "SELLER",
+        "manifest_details": {
+          "pickup_slot": "23:53:00-06:53:00",
+          "location_name": "Amazon2007",
+          "location_contact_no": 9643427280,
+          "concernedPersonName": "",
+          "product_type": "Guaranteed Product Services",
+          "sub_product_Type": "Next Day Delivery",
+          "is_mps_manifest": true,
+          "address": {
+            "line1": "Global_Ware_N Addr 2",
+            "line2": "",
+            "line3": "",
+            "city": "GURUGRAM",
+            "state": "HR",
+            "pincode": 122001
+          },
+          "location": {
+            "latitude": 0.0,
+            "longitude": 0.0
+          }
+        },
+        "setting": {
+          "is_partial_allow": "N",
+          "advance_pickup_check": 0,
+          "real_time_soft_data_check": "L",
+          "qr_code_check": 0,
+          "geo_code_check": 1,
+          "geo_code_latitude": 0.0,
+          "geo_code_longitude": 0.0
+        },
+        "shipment_details": [
+          {
+            "master_airwaybill_number": 917865434,
+            "airwaybill_number": 711644849,
+            "orderNo": "Test",
+            "is_mps": true,
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "master_airwaybill_number": 917865434,
+            "airwaybill_number": 711644850,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": true,
+            "dateTime": 1622172600000
+          }
+        ],
+        "flags": {
+          "oda_allowed": false,
+          "otp_required": false,
+          "is_location_verified": false
+        }
+      },
+      {
+        "cust_code": "49127",
+        "cust_name": "JAYPORE E- COMMERCE PRIVATE LIMITED",
+        "assign_date": 1580110791000,
+        "manifest_No": 120032,
+        "shipment_status": "PKP_20",
+        "remarks": "N/A",
+        "manifest_type": "P",
+        "total_shipment_count": 2,
+        "sequence_no": 1,
+        "location_type": "SELLER",
+        "manifest_details": {
+          "pickup_slot": "23:53:00-06:53:00",
+          "location_name": "Amazon2007",
+          "location_contact_no": 9643427280,
+          "concernedPersonName": "",
+          "product_type": "Guaranteed Product Services",
+          "sub_product_Type": "Next Day Delivery",
+          "is_mps_manifest": false,
+          "address": {
+            "line1": "Global_Ware_N Addr 2",
+            "line2": "",
+            "line3": "",
+            "city": "GURUGRAM",
+            "state": "HR",
+            "pincode": 122001
+          },
+          "location": {
+            "latitude": 0.0,
+            "longitude": 0.0
+          }
+        },
+        "setting": {
+          "is_partial_allow": "N",
+          "advance_pickup_check": 0,
+          "real_time_soft_data_check": "L",
+          "qr_code_check": 0,
+          "geo_code_check": 1,
+          "geo_code_latitude": 0.0,
+          "geo_code_longitude": 0.0
+        },
+        "shipment_details": [
+          {
+            "airwaybill_number": 711644839,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644840,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          }
+        ],
+        "flags": {
+          "oda_allowed": false,
+          "otp_required": false,
+          "is_location_verified": false
+        }
+      },
+      {
+        "cust_code": "49127",
+        "cust_name": "JAYPORE E- COMMERCE PRIVATE LIMITED",
+        "assign_date": 1580110791000,
+        "manifest_No": 120036,
+        "shipment_status": "PKP_20",
+        "remarks": "N/A",
+        "manifest_type": "P",
+        "total_shipment_count": 2,
+        "sequence_no": 1,
+        "location_type": "WAREHOUSE",
+        "manifest_details": {
+          "pickup_slot": "23:53:00-06:53:00",
+          "location_name": "Amazon2007",
+          "location_contact_no": 9643427280,
+          "concernedPersonName": "",
+          "product_type": "Guaranteed Product Services",
+          "sub_product_Type": "Next Day Delivery",
+          "is_mps_manifest": true,
+          "address": {
+            "line1": "Global_Ware_N Addr 2",
+            "line2": "",
+            "line3": "",
+            "city": "GURUGRAM",
+            "state": "HR",
+            "pincode": 122001
+          },
+          "location": {
+            "latitude": 0.0,
+            "longitude": 0.0
+          }
+        },
+        "setting": {
+          "is_partial_allow": "N",
+          "advance_pickup_check": 0,
+          "real_time_soft_data_check": "L",
+          "qr_code_check": 0,
+          "geo_code_check": 1,
+          "geo_code_latitude": 0.0,
+          "geo_code_longitude": 0.0
+        },
+        "shipment_details": [
+          {
+            "master_airwaybill_number": 917865431,
+            "airwaybill_number": 711644844,
+            "orderNo": "Test",
+            "is_mps": true,
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "master_airwaybill_number": 917865431,
+            "airwaybill_number": 711644820,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": true,
+            "dateTime": 1622172600000
+          }
+        ],
+        "flags": {
+          "oda_allowed": false,
+          "otp_required": false,
+          "is_location_verified": false
+        }
+      },
+      {
+        "cust_code": "49127",
+        "cust_name": "JAYPORE E- COMMERCE PRIVATE LIMITED",
+        "assign_date": 1580110791000,
+        "manifest_No": 120035,
+        "shipment_status": "PKP_20",
+        "remarks": "N/A",
+        "manifest_type": "P",
+        "total_shipment_count": 15,
+        "sequence_no": 1,
+        "location_type": "SELLER",
+        "manifest_details": {
+          "pickup_slot": "23:53:00-06:53:00",
+          "location_name": "Amazon2006",
+          "location_contact_no": 9643427280,
+          "concernedPersonName": "",
+          "product_type": "Guaranteed Product Services",
+          "sub_product_Type": "Next Day Delivery",
+          "is_mps_manifest": true,
+          "address": {
+            "line1": "Global_Ware_N Addr 2",
+            "line2": "",
+            "line3": "",
+            "city": "GURUGRAM",
+            "state": "HR",
+            "pincode": 122001
+          },
+          "location": {
+            "latitude": 25.4519318,
+            "longitude": 81.7542611
+          }
+        },
+        "setting": {
+          "is_partial_allow": "N",
+          "advance_pickup_check": 0,
+          "real_time_soft_data_check": "L",
+          "qr_code_check": 0,
+          "geo_code_check": 1,
+          "geo_code_latitude": 25.4519318,
+          "geo_code_longitude": 81.7542611,
+          "geo_code_radius": "100"
+        },
+        "shipment_details": [
+          {
+            "master_airwaybill_number": 987065431,
+            "airwaybill_number": 711644833,
+            "is_mps": true,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "master_airwaybill_number": 987065431,
+            "airwaybill_number": 711644834,
+            "orderNo": "Test",
+            "is_mps": true,
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "master_airwaybill_number": 987065431,
+            "airwaybill_number": 711644835,
+            "orderNo": "Test",
+            "is_mps": true,
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "master_airwaybill_number": 987065432,
+            "airwaybill_number": 711644836,
+            "orderNo": "Test",
+            "is_mps": true,
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "master_airwaybill_number": 987065432,
+            "airwaybill_number": 711644837,
+            "orderNo": "Test",
+            "is_mps": true,
+            "status": "EXS_10_10",
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644838,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644839,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644840,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644841,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644842,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644843,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644844,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644845,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644846,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "airwaybill_number": 711644847,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": false,
+            "dateTime": 1622172600000
+          },
+          {
+            "master_airwaybill_number": 987065431,
+            "airwaybill_number": 711644848,
+            "orderNo": "Test",
+            "status": "EXS_10_10",
+            "is_mps": true,
+            "dateTime": 1622172600000
+          }
+        ],
+        "flags": {
+          "oda_allowed": false,
+          "otp_required": false,
+          "is_location_verified": true
+        }
+      }
+    ],
+    "route_id": 6077,
+    "route_end_time": "06:53:00",
+    "facility_in_time": "08:12:00",
+    "manifest_cutoff_time": "18:53:00",
+    "last_sync_time": 1622194841838
+  }
+}

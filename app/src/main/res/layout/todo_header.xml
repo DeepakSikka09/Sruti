@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="activityTochild"
+            type="in.ecomexpress.sruti.ui.dashboard.todolist.todoactivitymodel.ToDoListActivity" />
+
+        <variable
+            name="dataToChild"
+            type="in.ecomexpress.sruti.ui.dashboard.todolist.todo_item_viewmodel.ToDoListViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        android:elevation="@dimen/_20DP"
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/_20DP"
+        android:paddingBottom="@dimen/_20DP"
+
+        android:weightSum=".10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight=".01"
+            android:gravity="start|center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:elevation="10px"
+                android:gravity="center"
+                android:onClick="@{() -> dataToChild.onBackClick()}"
+                app:srcCompat="@drawable/back"
+                tools:ignore="VectorDrawableCompat" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".03"
+            android:gravity="start|center"
+            android:orientation="vertical">
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_10DP"
+                android:layout_marginLeft="@dimen/_10DP"
+                android:gravity="center"
+                android:text="@string/to_do_list"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_10DP"
+                android:layout_marginLeft="@dimen/_10DP"
+                android:layout_weight=".01"
+                android:gravity="center"
+                android:text="@string/v2_0_0"
+                android:textColor="@color/colorAccent1"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tools"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight=".06"
+            android:gravity="center|end"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:weightSum=".06">
+
+
+            <ImageView
+                android:id="@+id/scansearch"
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10DP"
+                android:layout_weight=".01"
+                android:elevation="10px"
+                android:gravity="center"
+                android:onClick="@{() -> activityTochild.onScanClick()}"
+                app:srcCompat="@drawable/ic_scan" />
+
+            <ImageView
+                android:id="@+id/sync"
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10DP"
+                android:background="@null"
+                android:elevation="10px"
+                android:gravity="center"
+                android:onClick="@{() -> activityTochild.onSynClickEvent()}"
+                android:padding="@dimen/_5DP"
+                android:tint="@color/colorPrimaryDark"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_sync"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/switchnumber"
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10DP"
+                android:layout_weight=".01"
+                android:background="@null"
+                android:elevation="10px"
+                android:gravity="center"
+                android:onClick="@{()-> activityTochild.switchCallBridgeNumbers()}"
+                android:padding="@dimen/_5DP"
+                android:tint="@color/colorPrimaryDark"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_switch_number"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/locationSort"
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10DP"
+                android:layout_weight=".01"
+                android:background="@null"
+                android:elevation="10px"
+                android:gravity="center"
+                android:padding="@dimen/_5DP"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_sortby"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/btnMap"
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10DP"
+                android:layout_marginLeft="@dimen/_10DP"
+                android:layout_weight=".01"
+                android:background="@null"
+                android:elevation="10px"
+                android:gravity="center"
+                android:onClick="@{()-> activityTochild.switchToMapView()}"
+                android:padding="@dimen/_5DP"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_viewby"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/filter"
+                android:layout_width="@dimen/_50DP"
+                android:layout_height="@dimen/_50DP"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10DP"
+                android:layout_marginLeft="@dimen/_10DP"
+                android:layout_marginEnd="@dimen/_10DP"
+                android:layout_weight=".01"
+                android:background="@null"
+                android:elevation="10px"
+                android:gravity="center"
+                android:visibility="gone"
+                android:onClick="@{() -> dataToChild.onFilterClick()}"
+                android:padding="@dimen/_5DP"
+                app:srcCompat="@drawable/ic_filter"
+                tools:ignore="VectorDrawableCompat" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,293 @@
+<resources>
+    <array name="manifestTypeItems">
+        <item name="RECCE">Recce</item>
+        <item name="SELLER">Seller</item>
+        <item name="WAREHOUSE">Warehouse</item>
+        <item name="RECCE_SELLER">Recce Seller</item>
+        <item name="RECCE_WAREHOUSE">Recce Warehouse</item>
+    </array>
+    <!--Common Strings-->
+    <array name="manifestStatusItems">
+        <item name="PENDING">Pending</item>
+        <item name="PICKED">Picked</item>
+        <item name="FAILED">Failed</item>
+    </array>
+    <string name="app_name">SRUTi</string>
+    <string name="v2_0_0">v2.0.36</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <!--Dashboard Strings-->
+    <string name="server_down_msg">Failed to connect,please check your connectivity or contact admin.</string>
+    <string name="http_500_msg">Internal Server Error! Please contact system admin.</string>
+    <string name="no_network_error">No network connectivity</string>
+    <string name="session_expire">Your session has expired. Please log in</string>
+    <string name="pickup">PickUp</string>
+    <string name="departed">Depart</string>
+    <string name="reimburse">Fuel</string>
+    <string name="sync">Sync</string>
+    <string name="statistics">Statistics</string>
+    <string name="start_trip">Start Trip</string>
+    <string name="attendance">Attendance</string>
+    <string name="training">Training</string>
+    <string name="sos">SOS</string>
+    <string name="logout">Logout</string>
+    <string name="notification">Notification</string>
+    <string name="open_drawer">Drawer Open</string>
+    <string name="close_drawer">Drawer Close</string>
+    <string name="consignee_name">FE NAME</string>
+    <!--To-do Strings-->
+    <string name="profile">Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="call_it_support">Call IT Support</string>
+    <string name="switch_callbridge_number">Switch Callbridge Number</string>
+    <!--Signature Strings-->
+    <string name="to_do_list">To-Do List</string>
+    <string name="Apply">APPLY</string>
+    <string name="drsfilter">Filter By</string>
+    <!--Fuel Strings-->
+    <string name="shipment_status">Status</string>
+    <string name="status">Status :</string>
+    ReasonCodeListckup Strings-->
+    <string name="signature">Signature</string>
+    <string name="clear">Clear</string>
+    <string name="submit_">SUBMIT</string>
+    <string name="fuel_reimbursement">Fuel Reimbursement</string>
+    <string name="pickup_list">PickUp List</string>
+    <!--Attendance Strings-->
+    <string name="stop">Stop</string>
+    <string name="cancel">CANCEL</string>
+    <string name="ok">OKAY</string>
+    <string name="done">DONE</string>
+    <string name="monthly_working_hours">Monthly working hours</string>
+    <string name="monday">monday</string>
+    <string name="tuesdayl">tuesday</string>
+    <string name="wednesday">wednesday</string>
+    <string name="thursday">thursday</string>
+    <string name="friday">friday</string>
+    <string name="saturday">saturday</string>
+    <string name="month_validation_msg">You can not select this month.</string>
+    <string name="P">P</string>
+    <string name="A">A</string>
+    <string name="toast_to_select_month">Please select a month.</string>
+    <string name="copyright_txt">All copyrights are reserved by  Ecom Express Ltd. @2023</string>
+    <string name="fe_code">FE CODE</string>
+    <string name="vehicle_owner">Vehicle Owner</string>
+    <string name="vehicle_type">Vehicle Type</string>
+    <string name="hint_enter_veh">Enter Vehicle Number</string>
+    <string name="veh_num">Vehicle Number</string>
+    <string name="hint_enter_start_meter_reading">Enter Start Meter Reading</string>
+    <string name="hint_enter_stop_meter_reading">Enter Stop Meter Reading</string>
+    <string name="hint_username">Employee Code*</string>
+    <string name="hint_password">Password*</string>
+    <string name="forget_password">Forgot Password ?</string>
+    <string name="text_login">LOGIN</string>
+    <string name="or_use_touch_id"> Use Touch ID</string>
+    <string name="or">OR</string>
+    <string name="device_rooted">You can not use this application on rooted device.</string>
+    <string name="permission_required">Please provide all permissions</string>
+    <string name="check_internet">Please check your Internet Connection</string>
+    <string name="login_error">Employee ID or Password cannot be empty!</string>
+    <string name="otp_error">OTP cannot be empty!</string>
+    <string name="message_pass_expired">Your password expired, Please update.</string>
+    <string name="title_pass_expired">Password Expired</string>
+    <string name="notify_pass_expired">WARNING</string>
+    <string name="Continue">Continue</string>
+    <string name="hint_otp">OTP*</string>
+    <string name="enter_otp">Please Enter OTP</string>
+    <string name="enter_valid_otp">Please Enter a valid OTP</string>
+    <string name="please_enter_new_password_and_confirm_password">Please Enter New Password and Confirm Password</string>
+    <string name="hint_new_password">New Password*</string>
+    <string name="hint_confirm_password">Confirm Password*</string>
+    <string name="hint_emp_code">Enter Employee Code</string>
+    <string name="send_button">SEND</string>
+    <string name="submit">SUBMIT</string>
+    <string name="confirm_password">Confirm New Password*</string>
+    <string name="hint_old_password">Enter Old Password*</string>
+    <string name="invalid_confirm_password">Confirm and New Password Not match</string>
+    <string name="change_pass">CHANGE PASSWORD</string>
+    <string name="enter_new_password">Enter New Password*</string>
+    <string name="all_fields_are_mandatory">All Fields are mandatory</string>
+    <!--Forgot Password-->
+    <string name="please_enter_user_id">Please enter Employee ID</string>
+    <string name="please_check_internet">Please check your Internet Connection.</string>
+    <string name="already_scanned">Shipment already scanned.</string>
+    <string name="advance_validation_for_global">This shipment does not belong to any of the manifest</string>
+    <string name="verify">VERIFY</string>
+    <string name="resend"><u>RESEND</u></string>
+    <string name="launcher_icons">Launcher Icons</string>
+    <string name="please_fill_all_details">Please fill all the Details</string>
+    <string name="please_capture_image">Please capture image</string>
+    <string name="vehicle_number_validation">Please enter valid Vehicle Number.</string>
+    <string name="stop_trip">Stop Trip</string>
+    <string name="hint_enter_other_expense">Enter Other Expense</string>
+    <string name="verify_otp">Verification</string>
+    <string name="global_scan">Global Scan</string>
+    <string name="scan">SCAN</string>
+    <string name="next">NEXT</string>
+    <string name="global_scan_summary">Global Manifest Summary</string>
+    <string name="hand_over">HandOver</string>
+    <string name="scan_bar_code">Scan a Bar Code</string>
+    <string name="handover_summary">Handover Summary</string>
+    <string name="total_awb">Total AWB\'s </string>
+    <string name="extra_awb">Extra AWB\'s </string>
+    <string name="handover_delete_alert">Are you sure you want to delete AWB Number?</string>
+    <string name="invalid_awb">"No Such AWB Found!"</string>
+    <string name="awb_validate">Please Scan AWB Number</string>
+    <string name="shipment_list">Shipment List</string>
+    <string name="awb_no">AWB NO :</string>
+    <string name="pickup_list_header">Pickup List</string>
+    <string name="summary">SUMMARY</string>
+    <string name="total_manifest">Total Manifest</string>
+    <string name="total_shipment">Total Shipment</string>
+    <string name="picked_shipment">Picked Shipment</string>
+    <string name="remaining_shipment">Pending Shipment</string>
+    <string name="advance_shipment">Advance Shipment</string>
+    <string name="delete_awb">Are you sure you wants to delete AWB Number.</string>
+    <string name="awb_no_value">AWB NO :</string>
+    <string name="welcome">WELCOME</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="exit">Do you want to exit?</string>
+    <string name="back">Back</string>
+    <string name="unsuccessful">Unpicked Shipment</string>
+    <string name="alert_title">Alert.</string>
+    <string name="alert_no_change_afterwards">If you move to next, you will not be able to change any thing here.</string>
+    <string name="validate">Can\'t move forward with any pending shipment.</string>
+    <string name="decode_fail">Decode Fail</string>
+    <string name="no_data_found">No data found</string>
+    <string name="null_value">Null hashvalue</string>
+    <string name="airbill_validate">This AWB  does not exist in manifest.</string>
+    <string name="download_apk">Download URL cannot be blank.Please contact server Admin</string>
+    <string name="recce">RECCE</string>
+    <string name="pickup_value">PICKUP</string>
+    <string name="recce_pickup">RECCE + PICKUP</string>
+    <string name="recce_point">RECCE POINT</string>
+    <string name="answer_some_question">Answer Some Question</string>
+    <string name="check_status">STATUS</string>
+    <string name="check_status_normal_case">Status</string>
+    <string name="check_status_normal_case_colon">Status :</string>
+    <string name="commit">Are you sure you want to commit?</string>
+    <string name="mark_assigned">Do you want to mark this shipment again assigned ?</string>
+    <string name="mark_delete">Do you want to delete this shipment ?</string>
+    <string name="logout_message">Do you want to Logout?</string>
+    <string name="handover_list">HandOver List</string>
+    <string name="please_select_vehicle_type">Please Select Vehicle type</string>
+    <string name="vehicle_list">Vehicle List</string>
+    <string name="coming_soon">Coming Version</string>
+    <string name="unpicked_shipment">Unpicked Shipment</string>
+    <string name="shipment_status_value">Shipment Status</string>
+    <string name="Success">Success</string>
+    <string name="home">Home</string>
+    <string name="shipment_commit">This Manifest already marked committed.</string>
+    <string name="scan_validate_reason_code">Shipment is already attempted in this manifest.</string>
+    <string name="camera">Camera</string>
+    <string name="shipment_rto_locked">This Shipment has been RTO Lock, please return it back.</string>
+    <string name="depart_dialog_confirmation">Are you sure to depart your Trip.</string>
+    <string name="start_trip_msg">Are you sure want to Start Trip</string>
+    <string name="stop_trip_msg">Are you sure want to Stop Trip</string>
+    <string name="otp_verification">Code Verification</string>
+    <string name="verify_your_mobile">Verify your mobile</string>
+    <string name="we_have_sent">we have sent</string>
+    <string name="verify_your_otp">Verify your OTP</string>
+    <string name="qr_code">QR Code Verification</string>
+    <string name="scan_atlest_one">Please scan Atleast one shipment to go forward.</string>
+    <string name="otp_validate">OTP Not Matched</string>
+    <string name="cannot_go_back">Cannot go back!! Go forward to commit packet.</string>
+    <string name="cannot_go_back_via_multi">Cannot go back!!Until You remove MultiSpace App .</string>
+    <string name="Cant_go_Back">Can\'t Go back After Selecting Skip OTP </string>
+    <string name="child_api_error">Cannot commit this manifest as all childs have not commited yet!</string>
+    <string name="error_same_time_reschedule">Please select future time.</string>
+    <string name="manifestion">Manifestation</string>
+    <string name="aschild">Choose your role to commit manifest as </string>
+    <string name="asparent">Are you sure to remove manifest</string>
+    <string name="depart_msg">All vehicle are departed. You can not commit manifest.</string>
+    <string name="depart_msg_self">Vehicle is departed. You can not commit manifest.</string>
+    <string name="alreadyscanned">Shipment already scanned</string>
+    <string name="failed">Shipment already marked as Failed</string>
+    <string name="rto_locked">This Shipment has been RTO Lock, please return it back.</string>
+    <string name="regex_vaidation">Wrong AWB(AirWayBill) Number.</string>
+    <string name="already_exits">This AWB already exist in other manifest.</string>
+    <string name="scan_atleast_one">Please scan Atleast one shipment to go forward.</string>
+    <string name="pending_shipment">Cannot move forward with any shipment as pending.</string>
+    <string name="Invalid_data">Invalid data captured,please try again</string>
+    <string name="please_wait_data_is_syncing">Please wait data is Syncing</string>
+    <string name="scanning_is_started_by_child">Scanning is started. Please complete manifest.</string>
+    <string name="please_start_trip_to_access_data">Please start Trip to access data</string>
+    <string name="please_sync_data">Please Sync data</string>
+    <string name="route_not_assigned">Route not assigned</string>
+    <string name="you_do_not_have_permission">You do not have permission to Depart</string>
+    <string name="no_manifest_found">No manifest found</string>
+    <string name="no_network_found">Network not found</string>
+    <string name="please_stop_trip">Please Stop Trip.</string>
+    <string name="please_contact_server_admin">Please contact server admin.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update_reason_code">Update \nReason Code</string>
+    <string name="otp_verification_new">Otp Verification</string>
+    <string name="otp_description"><br>Please ask the  customer to share </br> the verification code send on registered mobile number</string>
+    <string name="resend_new"><u>Resend OTP</u></string>
+    <string name="multi_space">You have clone app installed in your phone. Uninstall clone app.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="enter_alternate_number"><u>Enter Another Number</u></string>
+    <string name="enter_alternt_number">Enter Another Number</string>
+    <string name="verify_proceed">Verify &amp; Proceed</string>
+    <string name="rights_to_apply_reason_code">As a child,You do not have rights to apply reason code</string>
+    <string name="title_activity_pick_up_fail">PickUpFailActivity</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="mid">MID</string>
+    <string name="pickup_failed">Pickup Failed</string>
+    <string name="proceed">Proceed</string>
+    <string name="picked">Picked</string>
+    <string name="unpicked">Unpicked</string>
+    <string name="advance">Advance</string>
+    <string name="pending">Pending</string>
+    <string name="click_photo">Click Photo</string>
+    <string name="sign_here">Sign here</string>
+    <string name="enter_valid_mob_no">Enter Valid Mobile No</string>
+    <string name="skip_otp"><u>Skip Verification</u></string>
+    <string name="verification">Verification</string>
+    <string name="awb_does_nt_exist">This awb does not exist</string>
+    <string name="newland">newland</string>
+    <string name="alert">Alert!</string>
+    <string name="warning_message"> and current time is not as per slot, Still you want to do pickup.</string>
+    <string name="restriction_message"> and current time is not as per slot, So you are not allow to do pickup.</string>
+    <string name="choose_mobile_no">Choose Mobile Number to send proof of pickup</string>
+    <string name="select_mobile_number">Select Mobile Number</string>
+    <string name="free_no">free_no</string>
+    <string name="atleast_one_mbl_no">Please Select Atleast One Mobile Number</string>
+    <string name="scan_brand_packaging">Scan the Branded Packaging  ID.</string>
+    <string name="Wrong_bp_code">Wrong/Incorrect  ID is scanned.</string>
+    <string name="call1">Primary Number</string>
+    <string name="call_2">Secondary Number</string>
+    <string name="skip_verification_dialog"><u>Skip Verification</u></string>
+    <string name="phone_number_is_invalid">Phone Number is invalid</string>
+    <string name="scan_bp_id">Scan Branded Packaging ID</string>
+    <string name="try_after_some_time">Try After Some Time</string>
+    <!-- Strings used for fragments for navigation -->
+    <string-array name="languages">
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Bengali</item>
+        <item>Punjabi</item>
+    </string-array>
+    <string-array name="type_of_veh">
+        <item>TWO</item>
+        <item>THREE</item>
+        <item>FOUR</item>
+        <!--<item>On Foot</item>-->
+    </string-array>
+    <string-array name="type_of_veh1">
+        <item>Three Wheeler</item>
+        <item>Four Wheeler</item>
+    </string-array>
+    <string-array name="veh_type">
+        <item>Self</item>
+        <item>Ecom Express</item>
+    </string-array>
+    <string-array name="vehicle">
+        <item>UP15AQ4231</item>
+        <item>HR15AQ4231</item>
+    </string-array>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+   >
+
+    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+        android:id="@+id/white_spinner_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5DP"
+        android:layout_margin="@dimen/_5DP"
+        android:textColor="@color/colorText"
+        android:gravity="center_vertical"
+        android:textSize="13sp"
+
+        />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_gravity="center"
+        android:background="@color/blue"
+        android:gravity="center" />
+
+</LinearLayout>

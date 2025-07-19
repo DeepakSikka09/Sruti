@@ -1,0 +1,13 @@
+{
+  "status": true,
+  "code": 200,
+  "description": "success",
+  "response": {
+   "self_drop_manifests": [
+     {
+       "is_self_drop_off": true,
+       "manifest_id": 120037
+     }
+   ]
+  }
+}

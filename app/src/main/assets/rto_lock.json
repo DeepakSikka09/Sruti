@@ -1,0 +1,60 @@
+{
+  "status": false,
+  "code": 200,
+  "description": "success",
+  "response": {
+    "manifest_status_details": [{
+      "manifest_id": 44439,
+      "listOfAwbs": [],
+      "shipment_details": [{
+        "airwaybill_number": 710549833,
+        "orderNo": "Prahsant Testing",
+        "status": "EXS_10_10",
+        "dateTime": 1602659287000
+      },
+        {
+          "airwaybill_number": 710549834,
+          "orderNo": "Prahsant Testing",
+          "status": "EXS_10_10",
+          "dateTime": 1602659288000
+        }
+      ]
+    },
+      {
+        "manifest_id": 44440,
+        "listOfAwbs": [],
+        "shipment_details": [{
+          "airwaybill_number": 710549835,
+          "orderNo": "Prahsant Testing",
+          "status": "EXS_10_10",
+          "dateTime": 1602659287000
+        },
+          {
+            "airwaybill_number": 710549836,
+            "orderNo": "Prahsant Testing",
+            "status": "EXS_10_10",
+            "dateTime": 1602659287000
+          }
+        ]
+      },
+      {
+        "manifest_id": 44441,
+        "listOfAwbs": [],
+        "shipment_details": [{
+          "airwaybill_number": 710549837,
+          "orderNo": "Prahsant Testing",
+          "status": "EXS_10_10",
+          "dateTime": 1602659047000
+        },
+          {
+            "airwaybill_number": 710549838,
+            "orderNo": "Prahsant Testing",
+            "status": "EXS_10_10",
+            "dateTime": 1602659166000
+          }
+        ]
+      }
+    ],
+    "last_sync_time": 1602661252485
+  }
+}

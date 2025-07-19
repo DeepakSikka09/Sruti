@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Positive dimen Units-->
+    <dimen name="_1DP">0.50dp</dimen>
+    <dimen name="_2DP">1.00dp</dimen>
+    <dimen name="_3DP">1.50dp</dimen>
+    <dimen name="_4DP">2.00dp</dimen>
+    <dimen name="_5DP">2.50dp</dimen>
+    <dimen name="_7DP">3.50dp</dimen>
+    <dimen name="_8DP">4.00dp</dimen>
+    <dimen name="_10DP">5.00dp</dimen>
+    <dimen name="_15DP">7.50dp</dimen>
+    <dimen name="_16DP">8dp</dimen>
+    <dimen name="_20DP">10.00dp</dimen>
+    <dimen name="_25DP">12.50dp</dimen>
+    <dimen name="_30DP">15.00dp</dimen>
+    <dimen name="_32DP">16.00dp</dimen>
+    <dimen name="_35DP">17.50dp</dimen>
+    <dimen name="_40DP">20.00dp</dimen>
+    <dimen name="_50DP">25.00dp</dimen>
+    <dimen name="_60DP">30.00dp</dimen>
+    <dimen name="_70DP">35.00dp</dimen>
+    <dimen name="_80DP">40.00dp</dimen>
+    <dimen name="_90DP">45.00dp</dimen>
+    <dimen name="_100DP">50.00dp</dimen>
+    <dimen name="_116DP">58.00dp</dimen>
+    <dimen name="_130DP">65.00dp</dimen>
+    <dimen name="_150DP">85.00dp</dimen>
+    <dimen name="_200DP">100.00dp</dimen>
+    <dimen name="_300DP">150.00dp</dimen>
+    <dimen name="_400DP">200.00dp</dimen>
+    <dimen name="_600DP">300.00dp</dimen>
+    <dimen name="_320dp">320dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
+    <dimen name="_13sp">13sp</dimen>
+    <dimen name="_25sp">25sp</dimen>
+    <dimen name="_15sp">15sp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="_18sp">18sp</dimen>
+    <dimen name="_30sp">30sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!--Negative dimen Units-->
+</resources>

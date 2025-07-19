@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.dashboard_main.dashboard_activity_model.DashboardActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.starttrip.StartTripViewModel" />
+    </data>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="10px"
+            app:cardBackgroundColor="@color/colorBackground"
+            app:cardCornerRadius="@dimen/_7DP"
+            app:cardElevation="@dimen/_25DP">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5DP"
+                android:background="@color/colorBackground"
+                android:padding="@dimen/_5DP">
+
+
+                <RelativeLayout
+                    android:id="@+id/layout_on_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorBackground"
+                    android:elevation="10px">
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_10DP"
+                        android:text="@string/start_trip"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/cross"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:padding="@dimen/_10DP"
+                        android:tint="@color/colorPrimaryDark"
+                        app:srcCompat="@drawable/ic_cross" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorView" />
+
+
+                <LinearLayout
+                    android:id="@+id/self"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_on_top"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10DP"
+                        android:background="@color/pickup"
+                        android:padding="@dimen/_10DP">
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:text="Vehicle Owner"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                            android:id="@+id/vehicle_owner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:gravity="end"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fillViewport="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/vehicle_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_below="@+id/vehicle_detail"
+                            android:layout_margin="@dimen/_10DP"
+                            android:gravity="bottom"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10DP">
+
+                            <Button
+                                android:id="@+id/tv_start"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/generic_button"
+                                android:gravity="center"
+                                android:text="@string/submit_"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <!--android:onClick="@{()-> viewModel.validationStartTrip()}"-->
+        </androidx.cardview.widget.CardView>
+
+
+</layout>

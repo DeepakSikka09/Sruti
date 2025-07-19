@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <!--<variable
+            name="activitybinding"
+            type="in.ecomexpress.sruti.ui.dashboard.ReasonCode.Activity.ManifestLevelReasonCodeActivity" />
+-->
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.reasoncode.ReasonCodeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_new" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginLeft="@dimen/_40DP"
+            android:layout_marginTop="@dimen/_80DP"
+            android:text="@string/update_reason_code"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_30sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_client_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_heading"
+            android:layout_marginLeft="@dimen/_40DP"
+            android:layout_marginTop="@dimen/_40DP"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_client_name"
+            android:layout_marginLeft="@dimen/_40DP"
+            android:layout_marginTop="@dimen/_20DP"
+            android:layout_marginRight="@dimen/_100DP"
+
+            android:text=""
+            android:textSize="14sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bt_submit"
+            android:layout_below="@+id/tv_address"
+            android:layout_marginStart="@dimen/_20DP"
+            android:layout_marginTop="@dimen/_40DP"
+            android:layout_marginEnd="@dimen/_20DP"
+            android:layout_marginBottom="@dimen/_20DP"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/single_item_reason_code" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_80DP"
+            android:layout_marginEnd="@dimen/_80DP"
+            android:layout_marginBottom="@dimen/_50DP"
+            android:background="@drawable/button_curved_background"
+            android:enabled="false"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:visibility="visible" />
+    </RelativeLayout>
+</layout>

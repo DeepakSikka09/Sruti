@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/forward"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorSearchbar"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:weightSum=".12">
+
+    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+        android:id="@+id/type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight=".02"
+        android:gravity="center"
+        android:text="VEN"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue" />
+
+    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+        android:id="@+id/pending"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_2DP"
+        android:layout_weight=".03"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue" />
+
+    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+        android:id="@+id/successful"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_2DP"
+        android:layout_weight=".03"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue" />
+
+    <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+        android:id="@+id/unsuccesful"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_2DP"
+        android:layout_weight=".04"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+</LinearLayout>

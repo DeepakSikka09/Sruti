@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <!--<variable
+            name="activitybinding"
+            type="in.ecomexpress.sruti.ui.dashboard.ReasonCode.Activity.OtpReasonCodeActivity" />
+-->
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.reasoncode.OtpReasonCodeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_new" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_client"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="" />
+
+        <include
+            android:id="@+id/otp_layout"
+            layout="@layout/otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_alternate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_skip_otp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/_35DP"
+            android:gravity="center"
+            android:padding="@dimen/_20DP"
+            android:text="@string/enter_alternate_number"
+            android:textColor="@color/blue_ecom" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_skip_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bt_verify"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_10DP"
+            android:gravity="center"
+            android:padding="@dimen/_20DP"
+            android:text="@string/skip_otp"
+            android:textColor="@color/blue_ecom"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_curved_background"
+            android:enabled="false"
+            android:text="@string/proceed"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</layout>

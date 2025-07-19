@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/_40DP"
+            android:layout_marginTop="@dimen/_80DP"
+            android:text="@string/update_reason_code"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_30sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_client_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_heading"
+            android:layout_marginLeft="@dimen/_40DP"
+            android:layout_marginTop="@dimen/_40DP"
+            android:text="client Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_client_name"
+            android:layout_marginLeft="@dimen/_40DP"
+            android:layout_marginTop="@dimen/_20DP"
+            android:layout_marginRight="@dimen/_100DP"
+            android:maxLines="2"
+            android:text="Flipkart Seller Service Dlf-2,964/56"
+            android:textSize="14sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bt_submit"
+            android:layout_below="@+id/tv_address"
+            android:layout_marginStart="@dimen/_20DP"
+            android:layout_marginTop="@dimen/_40DP"
+            android:layout_marginEnd="@dimen/_20DP"
+            android:layout_marginBottom="@dimen/_20DP"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/single_item_reason_code" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_80DP"
+            android:layout_marginEnd="@dimen/_80DP"
+            android:layout_marginBottom="@dimen/_50DP"
+            android:background="@drawable/button_curved_background"
+            android:text="Submit"
+            android:enabled="false"
+
+            android:textColor="@color/white"
+            android:visibility="visible" />
+    </RelativeLayout>
+</layout>

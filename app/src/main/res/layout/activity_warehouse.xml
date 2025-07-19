@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.warehouse.warehouse_activity_model.WarehouseActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.warehouse.warehouse_activity_model.WarehouseViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/popup_element"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:elevation="10px"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="start"
+                android:padding="@dimen/_10DP"
+                android:tint="@color/colorPrimaryDark"
+                app:srcCompat="@drawable/back" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:gravity="start"
+                android:padding="@dimen/_15DP"
+                android:text="Warehouse Detail"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/img_flag_fe_location"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="start"
+                android:padding="@dimen/_10DP"
+                android:visibility="visible"
+                android:src="@{viewModel.isFeAtLocation ? @drawable/ic_fe_location_correct :@drawable/ic_fe_location_wrong}"
+                tools:src="@drawable/ic_fe_location_wrong" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="start"
+                android:onClick="@{() -> viewModel.onSynClick()}"
+                android:padding="@dimen/_10DP"
+                android:tint="@color/colorPrimaryDark"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_sync" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                style="@style/TextStyle.Title.Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_10DP"
+                android:layout_marginRight="@dimen/_10DP"
+                android:gravity="center|end"
+                android:text="@string/v2_0_0"
+                android:textColor="@color/colorAccent1"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_gravity="center"
+            android:background="@color/colorView"
+            android:gravity="center" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_20DP"
+                android:orientation="vertical">
+                <!-- android:layout_marginBottom="@dimen/_130DP"
+ -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15DP"
+                    android:orientation="horizontal">
+
+                    <!--CHILD ONE-->
+                    <LinearLayout
+                        android:id="@+id/layout_child1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_2DP"
+                        android:background="@drawable/border"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15DP"
+                        android:paddingBottom="@dimen/_1DP">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/consignee_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start|center"
+                                android:hint="@string/next"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@{viewModel.sellerName}"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+
+                            <ImageView
+                                android:id="@+id/status"
+                                android:layout_width="@dimen/_60DP"
+                                android:layout_height="@dimen/_60DP"
+                                android:layout_gravity="right"
+                                android:background="@drawable/ic_attendance_bg"
+                                android:elevation="15px"
+                                android:gravity="end"
+                                android:onClick="@{() -> viewModel.onCheckStatusClick()}"
+                                android:tooltipText="@string/check_status"
+                                app:srcCompat="@drawable/ic_sync"
+                                tools:ignore="VectorDrawableCompat" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/total_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_shipment"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:text="@{viewModel.totalShipment}"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/picked_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_picked"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:text="@{viewModel.pickedShipment}"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/unsuccessful"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_unpicked"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:text="@{viewModel.unpickedShipment}"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/remaining_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_remaining"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:text="@{viewModel.remainingShipment}"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2DP"
+                            android:orientation="horizontal">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".08"
+                                android:gravity="start"
+                                android:maxLines="2"
+                                android:padding="@dimen/_1DP"
+                                android:scrollbars="vertical"
+                                android:text="@string/advance_shipment"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:id="@+id/txt_advance_shipment"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="@dimen/_2DP"
+                                android:layout_weight=".02"
+                                android:gravity="end"
+                                android:padding="@dimen/_1DP"
+                                android:text="@{viewModel.advanceShipment}"
+                                android:textColor="@color/colorText"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <!--</android.support.v7.widget.CardView>-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70DP"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10DP"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="@dimen/_2DP"
+                        android:layout_weight=".08"
+                        android:gravity="start"
+                        android:maxLines="2"
+                        android:padding="@dimen/_1DP"
+                        android:scrollbars="vertical"
+                        android:text="@string/advance_shipment"
+                        android:textColor="@color/colorText"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10DP"
+                        android:layout_marginLeft="@dimen/_10DP"
+                        android:layout_weight=".02"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/scanbtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:background="@drawable/generic_button"
+                            android:gravity="center"
+                            android:onClick="@{() -> viewModel.onScanClick()}"
+                            android:text="@string/scan"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight=".02"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/spinner_vehicle_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight=".01"
+                            android:background="@drawable/spinner_custom"
+                            android:gravity="end|center"
+                            android:padding="@dimen/_10DP" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight=".02"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_10DP"
+                            android:layout_marginRight="@dimen/_10DP"
+                            android:background="@drawable/generic_button"
+                            android:gravity="center"
+                            android:onClick="@{() -> viewModel.onNextClick()}"
+                            android:padding="@dimen/_1DP"
+                            android:text="NEXT"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10DP"
+                        android:layout_weight=".08"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_8DP"
+                        app:cardElevation="@dimen/_10DP">
+
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/searchview"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:theme="@style/SearchViewStyle"
+                            android:tint="@color/colorPrimaryDark" />
+                    </androidx.cardview.widget.CardView>
+
+                    <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="@dimen/_2DP"
+                        android:layout_weight=".09"
+                        android:gravity="start|center"
+                        android:maxLines="2"
+
+                        android:padding="@dimen/_10DP"
+                        android:scrollbars="vertical"
+                        android:text="Shipment List"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/selectAll"
+                        android:layout_width="@dimen/_50DP"
+                        android:layout_height="@dimen/_50DP"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10DP"
+                        android:layout_weight=".005"
+                        android:background="@null"
+                        android:gravity="center"
+                        app:srcCompat="@drawable/ic_select_all"
+                        tools:ignore="VectorDrawableCompat" />
+
+
+                    <ImageView
+                        android:id="@+id/btnDrop"
+                        android:layout_width="@dimen/_50DP"
+                        android:layout_height="@dimen/_50DP"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10DP"
+                        android:layout_weight=".005"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:padding="@dimen/_5DP"
+                        app:srcCompat="@drawable/ic_viewby"
+                        tools:ignore="VectorDrawableCompat" />
+
+
+
+                    <!-- <Spinner
+                         android:id="@+id/spinner_vehicle_type"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:layout_weight=".01"
+                         android:backgroundTint="@color/red_ecom"
+                         android:gravity="end|center"
+                         android:padding="@dimen/_10DP" />-->
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/shipment_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_20DP"
+                    android:padding="@dimen/_5DP" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/child"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_10DP"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10DP"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/btn_next"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".05"
+                        android:background="@drawable/generic_button"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.onScanClick()}"
+                        android:text="@string/scan"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".05"
+                        android:background="@drawable/generic_button"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.onNextClick()}"
+                        android:text="@string/next"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".5"
+                        android:background="@drawable/generic_button"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.onCheckStatusClick()}"
+                        android:text="@string/check_status"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <!--  <Button
+                          android:id="@+id/scanbtn"
+                          android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="bottom"
+                          android:layout_margin="@dimen/_5DP"
+                          android:layout_weight=".5"
+                          android:background="@drawable/generic_button"
+                          android:gravity="center"
+                          android:onClick="@{() -> viewModel.onScanClick()}"
+                          android:text="@string/scan"
+                          android:visibility="gone"
+                          android:textColor="@color/white"
+                          android:textSize="15sp"
+                          android:textStyle="bold" />-->
+
+                    <Button
+                        android:id="@+id/nxtbtn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="@dimen/_5DP"
+                        android:layout_weight=".5"
+                        android:background="@drawable/generic_button"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.onNextClick()}"
+                        android:text="@string/next"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/address_looking_up"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

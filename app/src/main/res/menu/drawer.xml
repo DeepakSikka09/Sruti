@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/navItemprofile"
+            android:checked="true"
+            android:icon="@drawable/account_edit"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/navItem_switch"
+            android:checked="true"
+            android:icon="@drawable/ic_switch_number"
+            android:iconTint="@color/white"
+            android:title="@string/switch_callbridge_number"
+            android:visible="false" />
+        <item
+            android:id="@+id/navChangePassword"
+            android:checked="true"
+            android:icon="@drawable/ic_change_password"
+            android:title="@string/change_password" />
+        <item
+            android:id="@+id/refer"
+            android:checked="true"
+            android:icon="@drawable/ic_headset_mic_black_24dp"
+            android:title="Refer"
+            android:visible="false" />
+        <item
+            android:id="@+id/navItem_call_it_team"
+            android:checked="true"
+            android:icon="@drawable/ic_headset_mic_black_24dp"
+            android:title="@string/call_it_support" />
+        <item
+            android:id="@+id/navItemLogout"
+            android:checked="true"
+            android:icon="@drawable/logout"
+            android:title="@string/logout" />
+    </group>
+</menu>

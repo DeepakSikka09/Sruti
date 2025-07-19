@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.dashboard.dashboard_main.dashboard_activity_model.DashboardActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="in.ecomexpress.sruti.ui.dashboard.dashboard_main.dashboard_activity_model.DashboardViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:fitsSystemWindows="true">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/clRootView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false">
+
+                <LinearLayout
+                    android:id="@+id/activityMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBackground"
+                    android:orientation="vertical">
+
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="10px">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            style="@style/Toolbar"
+                            android:layout_height="@dimen/_80DP"
+                            app:title="SRUTi Dashboard"
+                            app:titleTextAppearance="@style/Toolbar.TitleText"
+                            app:titleTextColor="@color/colorPrimaryDark">
+
+                            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:gravity="center"
+                                android:paddingEnd="@dimen/_10DP"
+                                android:paddingRight="@dimen/_10DP"
+                                android:id="@+id/version"
+                                android:text="@string/v2_0_0"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="12sp"
+                                android:visibility="visible" />
+                        </androidx.appcompat.widget.Toolbar>
+                    </com.google.android.material.appbar.AppBarLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorView"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorBackground"
+                        android:orientation="vertical"
+                        android:weightSum=".20">
+                        <!--
+
+                                                <android.support.v7.widget.CardView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="0dp"
+                                                    android:layout_gravity="center"
+                                                    android:layout_margin="@dimen/_10DP"
+                                                    android:layout_weight=".12"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal"
+                                                    android:weightSum=".30"
+                                                    app:cardBackgroundColor="@color/dashboardbg"
+                                                    app:cardElevation="@dimen/_20DP">
+                        -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight=".08"
+                            android:background="@color/colorBackground">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/bannr_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/newecomexpress"
+                                android:layout_margin="@dimen/_20DP"
+                                android:visibility="gone"/>
+
+
+                            <RelativeLayout
+                                android:id="@+id/rl_view_pager"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:background="@color/colorBackground"
+                                android:elevation="10px"
+                                android:orientation="vertical">
+
+                                <androidx.viewpager.widget.ViewPager
+                                    android:id="@+id/viewPager"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight=".09" />
+
+                                <LinearLayout
+                                    android:id="@+id/SliderDots"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_weight=".01"
+                                    android:background="@color/colorAccent2"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight=".12"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10DP"
+                            android:weightSum=".30"
+                            app:elevation="10dp">
+
+                            <!--Column 1-->
+                            <LinearLayout
+                                android:id="@+id/row1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".10"
+                                android:elevation="10dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum=".09">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onPickupClick()}"
+
+                                    android:orientation="horizontal">
+
+                                    <!--1.1 START/STOP-->
+                                    <LinearLayout
+                                        android:id="@+id/layout_todo"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:clickable="true"
+                                        android:focusable="true"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onPickupClick()}"
+                                        android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/circular_purple"
+                                            android:elevation="15px"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onPickupClick()}"
+                                            app:srcCompat="@drawable/ic_drs"
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/pickup"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <!--1.2 Stats-->
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorView"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onStatisticsClick()}"
+                                    android:orientation="horizontal"
+                                    app:cardElevation="@dimen/_20DP">
+
+                                    <LinearLayout
+                                        android:id="@+id/stats"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onStatisticsClick()}"
+                                        android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/drs_circular_green"
+                                            android:elevation="5px"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onStatisticsClick()}"
+                                            app:srcCompat="@drawable/ic_statistics" />
+
+                                        <!--  <ImageView
+                                              android:layout_width="50dp"
+                                              android:layout_height="50dp"
+                                              android:layout_gravity="center"
+                                              android:elevation="5px"
+                                              android:gravity="center"
+                                              android:onClick="@{() -> viewModel.onStatisticsClick()}"
+                                              tools:ignore="VectorDrawableCompat" />-->
+
+                                        <!--app:srcCompat="@drawable/ic_statistics"-->
+                                        <!--
+                                                                                <ImageView
+                                                                                    android:layout_width="50dp"
+                                                                                    android:layout_height="50dp"
+                                                                                    android:layout_gravity="center"
+                                                                                    android:background="@null"
+                                                                                    android:elevation="5px"
+                                                                                    android:gravity="center"
+                                                                                    android:onClick="@{() -> viewModel.onStatisticsClick()}"
+                                                                                    app:srcCompat="@drawable/ic_statistics"
+                                                                                    tools:ignore="VectorDrawableCompat" />-->
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/statistics"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorView"
+                                    android:visibility="gone" />
+
+                                <!--1.3 Training-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onTrainingClick()}"
+                                    android:orientation="horizontal"
+                                    app:cardElevation="@dimen/_20DP">
+
+                                    <LinearLayout
+                                        android:id="@+id/training"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+
+                                        android:orientation="vertical">
+
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/circular_yellow"
+                                            android:elevation="15px"
+                                            android:gravity="center"
+                                            app:srcCompat="@drawable/ic_people"
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/training"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorView"
+                                android:visibility="gone" />
+
+                            <!--Column 2-->
+                           <!-- <LinearLayout
+                                android:id="@+id/row2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight=".10"
+                                android:elevation="10dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum=".09">-->
+                                <LinearLayout
+                                    android:id="@+id/row2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight=".10"
+                                    android:elevation="10dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:weightSum=".09">
+                                <!--2.1 Sync-->
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onHandoverClick()}"
+                                    android:orientation="horizontal"
+                                    app:cardElevation="@dimen/_20DP">
+
+                                <!--    <LinearLayout
+                                        android:id="@+id/handover"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onHandoverClick()}"
+                                        android:orientation="vertical">-->
+
+                                        <LinearLayout
+                                            android:id="@+id/handover"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:clickable="true"
+                                            android:focusable="true"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onHandoverClick()}"
+                                            android:orientation="vertical">
+
+                                            <ImageView
+                                                android:layout_width="50dp"
+                                                android:layout_height="50dp"
+                                                android:layout_gravity="center"
+                                                android:background="@drawable/ic_attendance_bg"
+                                                android:elevation="15px"
+                                                android:gravity="center"
+                                                android:onClick="@{() -> viewModel.onHandoverClick()}"
+                                                app:srcCompat="@drawable/ic_sync"
+                                                tools:ignore="VectorDrawableCompat" />
+
+                                          <!--  <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/ic_attendance_bg"
+                                            android:elevation="5px"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onHandoverClick()}"
+                                            app:srcCompat="@drawable/ic_sync"
+                                            tools:ignore="VectorDrawableCompat" />-->
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/sync"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/colorAccent2"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    app:cardElevation="@dimen/_20DP"
+                                    android:onClick="@{() -> viewModel.onHandoverClick()}"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/trip"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onStartStopTripClick()}"
+                                        android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/circular_trip"
+                                            android:elevation="5px"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onStartStopTripClick()}"
+                                            app:srcCompat="@drawable/ic_truck" />
+
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:id="@+id/tv_trip"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/start_trip"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <!--2.3-->
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorView"
+                                    android:visibility="gone" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onSosClick()}"
+                                    android:orientation="horizontal"
+                                    app:cardElevation="@dimen/_20DP">
+
+                                    <LinearLayout
+                                        android:id="@+id/sos"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onSosClick()}"
+                                        android:orientation="vertical">
+
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/drs_cicular_red"
+                                            android:elevation="15px"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onSosClick()}"
+                                            app:srcCompat="@drawable/ic_call"
+
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/sos"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!--Column 3-->
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorView"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/row3"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight=".10"
+                                android:elevation="10dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:weightSum=".09">
+
+                                <!--3.1 Todo-->
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onFuelClick()}"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/fuel_reimburse"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onFuelClick()}"
+                                        android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/circular_sky_blue"
+                                            android:elevation="15px"
+
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onFuelClick()}"
+                                            app:srcCompat="@drawable/ic_fuel"
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/reimburse"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <!--3.2 Fuel-->
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorView"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onAttendanceClick()}"
+                                    android:orientation="horizontal"
+                                    app:cardElevation="@dimen/_20DP">
+
+
+                                    <LinearLayout
+                                        android:id="@+id/attend"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onAttendanceClick()}"
+                                        android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/circular_orange"
+                                            android:elevation="15px"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onAttendanceClick()}"
+                                            app:srcCompat="@drawable/ic_attendance"
+                                            tools:ignore="VectorDrawableCompat" />
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/attendance"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/colorView"
+                                    android:visibility="gone" />
+
+                                <!--3.3 Logout-->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/_10DP"
+                                    android:layout_weight=".03"
+                                    android:background="@color/white"
+                                    android:elevation="10px"
+                                    android:gravity="center"
+                                    android:onClick="@{() -> viewModel.onLogoutClick()}"
+                                    android:orientation="horizontal"
+                                    app:cardElevation="@dimen/_20DP">
+
+                                    <LinearLayout
+                                        android:id="@+id/log"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_weight=".03"
+                                        android:gravity="center"
+                                        android:onClick="@{() -> viewModel.onLogoutClick()}"
+                                        android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/circular_pink"
+                                            android:elevation="15px"
+                                            android:gravity="center"
+                                            android:onClick="@{() -> viewModel.onLogoutClick()}"
+                                            android:padding="@dimen/_15DP"
+                                            app:srcCompat="@drawable/ic_logout"
+                                            tools:ignore="VectorDrawableCompat" />
+
+
+                                        <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center"
+                                            android:text="@string/logout"
+                                            android:textColor="@color/gray"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!--</android.support.v7.widget.CardView>-->
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigationView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/_20DP"
+                android:background="@color/colorBackground"
+                app:itemIconTint="@color/colorAccent1"
+                app:itemTextColor="@color/colorPrimaryDark"
+                app:menu="@menu/drawer">
+
+
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </FrameLayout>
+</layout>

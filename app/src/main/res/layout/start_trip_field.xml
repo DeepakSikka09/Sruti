@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="in.ecomexpress.sruti.ui.dashboard.starttrip.Converter" />
+
+        <variable
+            name="foodata"
+            type="in.ecomexpress.sruti.model.starttrip.Start_Trip_Image" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:padding="@dimen/_2DP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_5DP"
+                android:layout_margin="@dimen/_5DP"
+                android:paddingRight="@dimen/_5DP"
+                >
+
+                <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                    android:id="@+id/vehtype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5DP"
+                    android:text="Vehicle Type"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/vehicle_typetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@{foodata.vehicle_type}"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/spinner_typeofvehicle"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/spinner_custom"
+                    android:entries="@array/type_of_veh"
+                    android:theme="@style/MatchSpinnerTheme" />
+            </RelativeLayout>
+            <!--app:spinnerListner="@{foodata.getSpinnerListnerObject}"-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_5DP"
+                android:layout_margin="@dimen/_5DP"
+                android:paddingRight="@dimen/_5DP"
+                android:textColorHint="@color/dark_gray"
+                android:textSize="13sp">
+
+                <EditText
+                    android:id="@+id/vehicle_starttrip_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cursorVisible="true"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="@string/hint_enter_veh"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1"
+                    android:movecursor="@{foodata.vehicleno}"
+                    android:singleLine="true"
+                    android:text="@={foodata.vehicleno}"
+                    android:textAllCaps="true"
+                    android:textColorHint="@color/gray"
+                    android:textSize="13sp"
+                    tools:ignore="RtlHardcoded" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_margin="@dimen/_5DP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum=".1">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".09"
+                    android:paddingLeft="@dimen/_5DP"
+                    android:paddingRight="@dimen/_5DP"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="13sp">
+
+
+                <EditText
+                        android:id="@+id/et_meter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:hint="@string/hint_enter_start_meter_reading"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray"
+                        android:textSize="13sp"
+                    android:toString="@={foodata.meter_reading}"
+                         />
+<!--android:toString="@={foodata.meter_reading}"-->
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--android:text="@={Converter.longToString(etMeter,foodata.meter_reading,foodata.meter_reading)}"-->
+                <!--android:toString="@={foodata.meter_reading}"-->
+                <!--android:text="@={Converter.longToString(foodata.meter_reading)}"-->
+                <ImageView
+                    android:id="@+id/image_capture"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".01"
+                    android:gravity="end|center"
+                    android:paddingLeft="@dimen/_5DP"
+                    android:paddingRight="@dimen/_5DP"
+                    app:captureImage="@{foodata.image_path}"
+                    app:srcCompat="@drawable/cam" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--android:layout_height="1dp"/>-->
+        <!-- app:captureImage="@{foodata.image_path}"-->
+    </androidx.cardview.widget.CardView>
+</layout>
+

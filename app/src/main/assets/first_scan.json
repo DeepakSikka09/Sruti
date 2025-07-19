@@ -1,0 +1,11 @@
+{
+  "code": 0,
+  "description": "string",
+  "response": {
+    "description": "string",
+    "errors": [
+      "string"
+    ]
+  },
+  "status": true
+}

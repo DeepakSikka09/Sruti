@@ -1,0 +1,23 @@
+package in.ecomexpress.sruti.ui.dashboard.globalscan;
+
+import java.util.ArrayList;
+
+import dagger.Module;
+import dagger.Provides;
+import in.ecomexpress.sruti.model.menifestdata.Shipment_Detail;
+import in.ecomexpress.sruti.repo.IDataManager;
+import in.ecomexpress.sruti.utils.rx.ISchedulerProvider;
+
+@Module
+public class GlobalScanScreenModule {
+    @Provides
+    GlobalScanScreenViewModel provideScanScreenViewModel(IDataManager iDataManager, ISchedulerProvider iSchedulerProvider) {
+        return new GlobalScanScreenViewModel(iDataManager, iSchedulerProvider);
+    }
+
+    @Provides
+    GlobalScanAdapter provideGlobalScanAdapter() {
+        return new GlobalScanAdapter(new ArrayList<Shipment_Detail>());
+
+    }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5DP"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_7DP"
+    app:cardElevation="@dimen/_10DP">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5DP"
+        android:background="@drawable/delivered_gradient"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5DP"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5DP">
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:text="@string/awb_no"
+                android:textColor="@color/colorText"
+                android:textSize="13sp" />
+
+            <in.ecomexpress.sruti.utils.fonts.CustomTextRegular
+                android:id="@+id/tv_awb_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:text="126161626"
+                android:textColor="@color/colorText"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_scan_bp_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5DP"
+            android:padding="@dimen/_5DP"
+            android:visibility="gone"
+            android:text="@string/scan_bp_id"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

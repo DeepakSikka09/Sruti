@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curved_rectangle_white_two_side">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/first_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_40DP"
+            android:layout_marginTop="@dimen/_80DP"
+            android:layout_marginEnd="@dimen/_40DP"
+            android:layout_marginBottom="@dimen/_80DP"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_alternate_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_40DP"
+                android:background="@drawable/transparent_with_grey_border"
+                android:hint="@string/enter_alternt_number"
+                android:maxLength="10"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/_20DP"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_verify_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40DP"
+                android:layout_marginTop="@dimen/_80DP"
+                android:layout_marginEnd="@dimen/_40DP"
+                android:background="@drawable/button_curved_selected_background"
+                android:text="@string/verify"
+                android:maxLength="10"
+                android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/_10DP"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_alternate_no" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tv_counterTimer"
+            app:layout_constraintTop_toBottomOf="@id/first_constraint"
+            android:layout_marginBottom="@dimen/_10DP"
+            android:layout_marginTop="@dimen/_3DP"
+            android:text="egfhgjj"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_skip_verification"
+        app:layout_constraintTop_toBottomOf="@id/first_constraint"
+        android:layout_marginBottom="@dimen/_10DP"
+        android:layout_marginTop="@dimen/_3DP"
+        android:text="@string/skip_verification_dialog"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/blue_ecom"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
